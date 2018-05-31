@@ -1,0 +1,108 @@
+[06:40:40am][admin][::1][DELETE SUCCESS][DELETE FROM instrumen WHERE id=? : (15 )]
+[06:41:27am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Mampu mengelompokkan benda berdasarkan bentuk: Kotak, Bola, Kaleng, no_image.jpg, - )]
+[06:44:55am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Mampu membedakan benda (Bola dan Tabung), 180527064455am-1.jpg, - )]
+[06:46:13am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Mampu membedakan benda (Persegi dan Segitiga), 180527064612am-1.jpg, - )]
+[06:48:44am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Mampu membedakan (Pulpen dan Pensil, 180527064844am-1.jpg, - )]
+[06:49:43am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Mampu menunjukkan dan 
+menyebutkan warna : (merah, kuning, biru), no_image.jpg, - )]
+[06:57:52am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Bisa membedakan warna (Merah dengan Kuning, Kuning dengan Biru, Biru dengan Merah), 180527065752am-1.jpg, - )]
+[06:58:03am][admin][::1][UPDATE SUCCESS][UPDATE instrumen set butir=?, gambar=?, keterangan=? WHERE id=? : (Mampu menunjukkan dan 
+menyebutkan warna : (merah, kuning, biru), 180527065803am-.jpg, -, 20 )]
+[06:58:45am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Bisa membedakan ukuran (Panjang dengan Pendek, 180527065845am-1.jpg, - )]
+[06:59:38am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Bisa membedakan ukuran (Tinggi dengan Rendah), 180527065938am-1.jpg, - )]
+[07:00:06am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Bisa membedakan ukuran (Besar dengan Kecil), 180527070006am-1.jpg, - )]
+[07:00:34am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Bisa membedakan ukuran (Banyak dengan Sedikit), 180527070034am-1.jpg, - )]
+[07:01:00am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Bisa membedakan ukuran (Berat dengan Ringan), 180527070100am-1.jpg, - )]
+[07:01:27am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Bisa membedakan permukaan benda (Halus dengan Kasar), no_image.jpg, - )]
+[07:02:13am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Bisa membedakan suhu (Panas dengan Dingin), no_image.jpg, - )]
+[07:05:11am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Anak bisa menuruti perintah tester (melompat, jalan di tempat, berlari, merayap, berguling, merangkak), no_image.jpg, - )]
+[07:06:52am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Anak menoleh ketika dipanggil namanya, no_image.jpg, - )]
+[07:09:44am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Anak bisa mengetahui bunyi-bunyian dari asesor (tepuk tangan, petikan jari, tepukan meja, tepukan lantai )
+, no_image.jpg, - )]
+[07:10:47am][admin][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 1, 1, Anak mengetahui suara binatang (kucing, burung, anjing, ayam), no_image.jpg, - )]
+[10:43:52am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, anak 1, , , 0 Tahun 0 Bulan, , , , 2018-05-27, , 1 )]
+[10:45:12am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, anak 1, , , 0 Tahun 0 Bulan, , , , 2018-05-27, , 1 )]
+[10:45:48am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, anak 1, , 12/12/2012, 0 Tahun 0 Bulan, ortu 1, alamat 1, 1, 2018-05-27, 1, 1 )]
+[10:46:33am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, anak 1, , 12/12/2012, 0 Tahun 0 Bulan, ortu 1, alamat 1, 1, 2018-05-27, 1, 1 )]
+[10:49:11am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, anak 1, , 12/12/2012, 5 Tahun 5 Bulan, ortu 1, alamat 1, 1, 2018-05-27, 1, 1 )]
+[10:49:42am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, anak 1, , 12/12/2012, 5 Tahun 5 Bulan, ortu 1, alamat 1, 1, 2018-05-27, 1, 1 )]
+[10:49:59am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, anak 1, Laki-laki, 12/12/2012, 5 Tahun 5 Bulan, ortu 1, alamat 1, 1, 2018-05-27, 1, 1 )]
+[10:55:47am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, anak 1, Laki-laki, 12/12/2012, 5 Tahun 5 Bulan, ortu 1, alamat 1, 1, 2018-05-27, 1, 1 )]
+[10:56:11am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 1, Laki-laki, 02/03/0004, 2014 Tahun 3 Bulan, 5, 6, 7, 2018-05-27, 1, 1 )]
+[10:56:53am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 1, Laki-laki, 02/03/0004, 2014 Tahun 3 Bulan, 5, 6, 7, 2018-05-27, 1, 1 )]
+[10:57:19am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 1, Laki-laki, 02/03/0004, 2014 Tahun 3 Bulan, 5, 6, 7, 2018-05-27, 1, 1 )]
+[10:57:55am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 1, Laki-laki, 02/03/0004, 2014 Tahun 3 Bulan, 5, 6, 7, 2018-05-27, 1, 1 )]
+[10:58:41am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 1, Laki-laki, 02/03/0004, 2014 Tahun 3 Bulan, 5, 6, 7, 2018-05-27, 1, 1 )]
+[10:59:23am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 1, Laki-laki, 02/02/2002, 16 Tahun 3 Bulan, 2, 3, 4, 2018-05-27, 1, 1 )]
+[11:00:03am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 1, Laki-laki, 02/02/2002, 16 Tahun 3 Bulan, 2, 3, 4, 2018-05-27, 1, 1 )]
+[11:01:14am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 1, Laki-laki, 12/12/2012, 5 Tahun 5 Bulan, Ortu 1, Alamat 1, 111, 2018-05-27, 1, 1 )]
+[11:03:04am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 2, Laki-laki, 02/02/2002, 16 Tahun 3 Bulan, Ortu 2, Alamat 2, 2222, 2018-05-27, 1, 1 )]
+[11:04:26am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:04:55am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:05:36am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:05:51am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:06:05am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:06:12am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:06:48am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:07:59am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:08:11am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:09:50am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:12:23am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:12:42am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:12:56am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:13:16am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:13:31am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:16:43am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:26:20am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:33:04am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:33:58am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:34:05am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:37:17am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:37:56am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:38:21am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 3, Laki-laki, 03/03/2013, 5 Tahun 2 Bulan, Ortu 3, Alamat 3, 08133333, 2018-05-27, 2, 1 )]
+[11:45:23am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 24, Laki-laki, 10/01/2010, 7 Tahun 7 Bulan, Ortu 1, Alamat 1, 081101, 2018-05-27, 1, 1 )]
+[11:45:40am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 24, Laki-laki, 10/01/2010, 7 Tahun 7 Bulan, Ortu 1, Alamat 1, 081101, 2018-05-27, 1, 1 )]
+[11:49:16am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Anak 1, Laki-laki, 01/01/2001, 17 Tahun 4 Bulan, Ortu 1, Alamat 1, 081101, 2018-05-27, 1, 1 )]

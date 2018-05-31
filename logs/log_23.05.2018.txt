@@ -1,0 +1,2 @@
+[09:28:27pm][admin][::1][INSERT SUCCESS][INSERT INTO t_tahunkomoditas (status,tahun,id_komoditas,id_pengguna) VALUES (?,?,?,?) : (1, 2018, 5, 1 )]
+[09:57:01pm][admin][::1][DELETE SUCCESS][DELETE FROM t_tahunkomoditas WHERE id=? : (5 )]

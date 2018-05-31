@@ -1,0 +1,7 @@
+[03:10:07am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 1, Laki-laki, 01/01/2001, 17 Tahun 4 Bulan, 2, 3, 4, 2018-05-28, 3, 1 )]
+[03:37:59am][admin][::1][INSERT FAIL][(2015-2/-1/ )]
+[03:38:36am][admin][::1][INSERT FAIL][(2015-2/-1/ )]
+[03:39:22am][admin][::1][INSERT FAIL][(2055-12-31 )]
+[03:40:50am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 1, Perempuan, 2015-12-31, 2 Tahun 4 Bulan, 2, 3, 4, 2018-05-28, 1, 1 )]
