@@ -29,40 +29,13 @@
             <li><a href="?page=Pengguna-Data">Pengguna</a></li>
             <li><a href="?page=Kategori-Data">Kategori</a></li>
             <li><a href="?page=Pilih-Kategori&Kode=View-Instrumen">Instrumen</a></li>
-            <li><a href="?page=Kabupaten-Data">Kabupaten/Kota</a></li>
-            <li><a href="?page=Kecamatan-Data">Kecamatan</a></li>
-            <li><a href="?page=Desa-Data">Kelurahan/Desa</a></li>
         </ul>
         </li>
         <li><a><i class="fa fa-user"></i>User Asesor <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
+            <li><a href="?page=Anak-Data">Data Anak</a></li>
             <li><a href="?page=Asesmen-Anak">Asesmen Anak</a></li>
             <li><a href="?page=Lihat-Siswa">Lihat Data Anak</a></li>
-        </ul>
-        </li>
-        <li><a><i class="fa fa-user"></i>User Bidang <span class="fa fa-chevron-down"></span></a>
-        <ul class="nav child_menu">
-            <li><a>Master<span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    
-                    <li><a href="?page=Poktan-Data">Kelompok Tani</a></li>
-                    <li><a href="?page=Komoditas-Data">Komoditas</a></li>
-                    <li class="sub_menu"><a href="?page=Peternak-Data">Peternak</a></li>
-                </ul>
-            </li>
-            <li><a>Proses<span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li class="sub_menu"><a href="?page=Tahunkomoditas-Data">Tahun Komoditas</a></li>
-                    <li><a href="?page=Poktan-Data">Kelompok Tani</a></li>
-                </ul>
-            </li>
-        </ul>
-        </li>
-
-        <li><a><i class="fa fa-users"></i>User Balai <span class="fa fa-chevron-down"></span></a>
-        <ul class="nav child_menu">
-            <li><a href="?page=Penyuluh-Data">Penyuluh</a></li>
-            <li><a href="?page=Pilih-Desa-Bulan">Upaya Khusus</a></li>
         </ul>
         </li>
         <li><a href="?page=Logout"><i class="fa fa-sign-out"></i> Log Out </a>

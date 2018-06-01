@@ -267,8 +267,8 @@ function inputRadio($type,$text,$i,$data,$tambahan){
     		</label>
 			<div class="col-md-6 col-sm-6 col-xs-12">
                       <p>
-						Laki-laki:<input type="radio" class="flat" name="txt<?php echo $i;?>"  id="Laki-laki" value="Laki-laki" checked="" required /> 
-						Perempuan:<input type="radio" class="flat" name="txt<?php echo $i;?>"  id="Perempuan" value="Perempuan" />
+						Laki-laki:<input type="radio" class="flat" name="txt<?php echo $i;?>"  id="Laki-laki" value="Laki-laki" <?php if($data="Laki-laki") echo "checked" ?> required /> 
+						Perempuan:<input type="radio" class="flat" name="txt<?php echo $i;?>"  id="Perempuan" value="Perempuan" <?php if($data="Perempuan") echo "checked" ?>/>
 					  </p>
 					  </div>
 		  </div>                

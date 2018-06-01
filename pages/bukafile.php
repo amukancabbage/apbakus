@@ -150,6 +150,18 @@ $nopage = "<meta http-equiv='refresh' content='0; url=page_404.html'> ";
             case 'Penyuluh-Ubah' :				
                 if(!file_exists ('pages/userbalai/penyuluh_ubah.php')) die ($nopage); 
                 include 'pages/userbalai/penyuluh_ubah.php';	break;	
+        
+            case 'Anak-Baru' :				
+                if(!file_exists ('pages/asesor/anak_baru.php')) die ($nopage); 
+                include 'pages/asesor/anak_baru.php';	break;	
+            
+            case 'Anak-Data' :				
+                if(!file_exists ('pages/asesor/anak_data.php')) die ($nopage); 
+                include 'pages/asesor/anak_data.php';	break;	
+        
+            case 'Anak-Ubah' :				
+                if(!file_exists ('pages/asesor/anak_ubah.php')) die ($nopage); 
+                include 'pages/asesor/anak_ubah.php';	break;	
     
           
             //::MASTER DATA END

@@ -8,3 +8,14 @@
                           VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, 3, Perempuan, 2003-03-03, 15 Tahun 2 Bulan, 1, 2, 3, 2018-06-01, 1, 1 )]
 [04:41:29am][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,usia,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
                           VALUES (?,?,?,?,?,?,?,?,?,?,?) : (1, Nama Satu, Perempuan, 2012-12-12, 5 Tahun 5 Bulan, Ortu Satu, Alamat Satu, 08110181, 2018-06-01, 1, 1 )]
+[09:19:43pm][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,nama_ortu,alamat,no_kontak,tanggal_asesmen,id_kategori,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?) : (1, Anak Lima, Perempuan, 2015-05-05, Ortu Lima, Alamat Lima, 081105, 1 )]
+[09:21:58pm][admin][::1][INSERT SUCCESS][INSERT INTO siswa (status,nama,jenis_kelamin,tanggal_lahir,nama_ortu,alamat,no_kontak,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?) : (1, Anak Lima, Perempuan, 2015-05-05, Ortu Lima, Alamat Lima, 081105, 1 )]
+[09:58:58pm][admin][::1][UPDATE FAIL][(Format Tanggal Harus TGL/BLN/THN )]
+[09:59:14pm][admin][::1][UPDATE SUCCESS][UPDATE anak set nama=?, jenis_kelamin=?, tanggal_lahir=?, nama_ortu=?, alamat=?, no_kontak=?. id_user=? WHERE id=? : (Anak Lima1, Laki-laki, 2015-05-05, Ortu Lima1, Alamat Lima1, 081105, 1, 1 )]
+[10:00:05pm][admin][::1][UPDATE SUCCESS][UPDATE anak set nama=?, jenis_kelamin=?, tanggal_lahir=?, nama_ortu=?, alamat=?, no_kontak=?, id_user=? WHERE id=? : (Anak Lima1, Laki-laki, 2015-05-06, Ortu Lima1, Alamat Lima1, 081105, 1, 1 )]
+[10:00:17pm][admin][::1][UPDATE SUCCESS][UPDATE anak set nama=?, jenis_kelamin=?, tanggal_lahir=?, nama_ortu=?, alamat=?, no_kontak=?, id_user=? WHERE id=? : (Anak Lima, Perempuan, 2015-05-06, Ortu Lima, Alamat Lima, 081105, 1, 1 )]
+[10:03:09pm][admin][::1][INSERT SUCCESS][INSERT INTO anak (status,nama,jenis_kelamin,tanggal_lahir,nama_ortu,alamat,no_kontak,id_user) 
+                          VALUES (?,?,?,?,?,?,?,?) : (1, 123, Laki-laki, 2111-11-11, 123, 456, 4213, 1 )]
+[10:03:12pm][admin][::1][DELETE SUCCESS][DELETE FROM anak WHERE id=? : (2 )]
