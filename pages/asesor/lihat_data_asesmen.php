@@ -1,38 +1,3 @@
-<?php
-if($_GET){
-    $id_siswa=decD($_GET['ids']);
-}
-if(isset($_POST['simpan'])){
-  $mampu = $_POST['cbmampu'];
-  if(empty($mampu)) 
-  {
-    //echo("You didn't select any buildings.");
-  } 
-  else
-  {
-    $arrCriteria = array($id_siswa);
-    $mySql = "SELECT asesmen_siswa.*, instrumen.butir AS butir, instrumen.gambar FROM asesmen_siswa 
-                    INNER JOIN instrumen ON asesmen_siswa.id_instrumen = instrumen.id 
-                    WHERE asesmen_siswa.id_siswa=?";
-    $jml_data = getDataNumber($koneksidb,$mySql,$arrCriteria);
-    $datas = getDataCriteriaAll($koneksidb,$mySql,$arrCriteria);
-    $N = count($mampu);
-
-    //echo("You selected $N door(s): ");
-    foreach ($datas as $data) {
-      echo $data[0];
-      
-      $hasil = "TIDAK";
-      if (in_array($data[0], $mampu)){
-        $hasil = "MAMPU";
-      }
-      $arrCriteria =array($hasil,$data[0]);
-      $editQuery	= "UPDATE asesmen_siswa set hasil=? WHERE id=?"; 
-      execSql($koneksidb,$editQuery,$arrCriteria);
-    }
-  }
-}
-?>
 <div class="page-title">
     <div class="title_left">
     <h3>Input Data Asesmen <small></small></h3>
@@ -71,7 +36,7 @@ if(isset($_POST['simpan'])){
                     </div>
                   </div>    -->
     <?php
-      $tableName = "asesmen_siswa"; 
+      $tableName = "siswa"; 
       $formName = "Kategori"; 
       $jmlField = "5"; 
 
@@ -94,7 +59,7 @@ if(isset($_POST['simpan'])){
       $mySql = "SELECT asesmen_siswa.*, instrumen.butir AS butir, instrumen.gambar FROM asesmen_siswa 
                     INNER JOIN instrumen ON asesmen_siswa.id_instrumen = instrumen.id 
                     WHERE asesmen_siswa.id_siswa=?";
-        showTableAsesmen($koneksidb,$tableName,$isian,$field,$formName,$jmlField,$mySql,$arrCriteria);
+      showTableAsesmen($koneksidb,$tableName,$isian,$field,$formName,$jmlField,$mySql,$arrCriteria);
         
     ?> 
     <button type="submit" name="simpan" class="btn btn-primary bg-green" ><i class="fa fa-save"></i> SIMPAN DATA</button>

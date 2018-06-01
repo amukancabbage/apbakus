@@ -17,7 +17,7 @@ if(isset($_POST['lanjut'])){
 
 	// Convert Ke Date Time
   $biday = new DateTime($tanggal_lahir);
-  $tgl = date('Y-m-d',$biday);
+  // $tgl = date('Y-m-d',$biday);
 	$today = new DateTime();
 	
 	$diff = $today->diff($biday);

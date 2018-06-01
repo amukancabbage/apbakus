@@ -180,6 +180,10 @@ $nopage = "<meta http-equiv='refresh' content='0; url=page_404.html'> ";
             case 'Asesmen-Instrumen' :				
                 if(!file_exists ('pages/asesor/input_data_asesmen.php')) die ($nopage); 
                 include 'pages/asesor/input_data_asesmen.php';	break;	
+
+            case 'Lihat-Siswa' :				
+                if(!file_exists ('pages/asesor/lihat_data_siswa.php')) die ($nopage); 
+                include 'pages/asesor/lihat_data_siswa.php';	break;	
             //::PROSES DATA END
 
             //::ETC BEGIN

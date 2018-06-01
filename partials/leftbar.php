@@ -37,6 +37,7 @@
         <li><a><i class="fa fa-user"></i>User Asesor <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
             <li><a href="?page=Asesmen-Anak">Asesmen Anak</a></li>
+            <li><a href="?page=Lihat-Siswa">Lihat Data Anak</a></li>
         </ul>
         </li>
         <li><a><i class="fa fa-user"></i>User Bidang <span class="fa fa-chevron-down"></span></a>

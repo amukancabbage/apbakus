@@ -1,41 +1,6 @@
-<?php
-if($_GET){
-    $id_siswa=decD($_GET['ids']);
-}
-if(isset($_POST['simpan'])){
-  $mampu = $_POST['cbmampu'];
-  if(empty($mampu)) 
-  {
-    //echo("You didn't select any buildings.");
-  } 
-  else
-  {
-    $arrCriteria = array($id_siswa);
-    $mySql = "SELECT asesmen_siswa.*, instrumen.butir AS butir, instrumen.gambar FROM asesmen_siswa 
-                    INNER JOIN instrumen ON asesmen_siswa.id_instrumen = instrumen.id 
-                    WHERE asesmen_siswa.id_siswa=?";
-    $jml_data = getDataNumber($koneksidb,$mySql,$arrCriteria);
-    $datas = getDataCriteriaAll($koneksidb,$mySql,$arrCriteria);
-    $N = count($mampu);
-
-    //echo("You selected $N door(s): ");
-    foreach ($datas as $data) {
-      echo $data[0];
-      
-      $hasil = "TIDAK";
-      if (in_array($data[0], $mampu)){
-        $hasil = "MAMPU";
-      }
-      $arrCriteria =array($hasil,$data[0]);
-      $editQuery	= "UPDATE asesmen_siswa set hasil=? WHERE id=?"; 
-      execSql($koneksidb,$editQuery,$arrCriteria);
-    }
-  }
-}
-?>
 <div class="page-title">
     <div class="title_left">
-    <h3>Input Data Asesmen <small></small></h3>
+    <h3>Lihat Data Siswa <small></small></h3>
     </div>
 </div>
 
@@ -71,9 +36,9 @@ if(isset($_POST['simpan'])){
                     </div>
                   </div>    -->
     <?php
-      $tableName = "asesmen_siswa"; 
-      $formName = "Kategori"; 
-      $jmlField = "5"; 
+      $tableName = "siswa"; 
+      $formName = "Siswa"; 
+      $jmlField = "9"; 
 
       $field[0]="id"; 
       $isian[0]="Id"; 
@@ -83,18 +48,25 @@ if(isset($_POST['simpan'])){
       $isian[2]="Updated At"; 
       $field[3]="status"; 
       $isian[3]="Status"; 
-      $field[4]="butir"; 
-      $isian[4]="Butir Instrumen"; 
-      $field[5]="gambar"; 
-      $isian[5]="Gambar"; 
+      $field[4]="nama"; 
+      $isian[4]="Nama"; 
+      $field[5]="jenis_kelamin"; 
+      $isian[5]="Jenis Kelamin"; 
+      $field[6]="tanggal_lahir"; 
+      $isian[6]="Tanggal Lahir"; 
+      $field[7]="nama_ortu"; 
+      $isian[7]="Nama Orang Tua"; 
+      $field[8]="tanggal_asesmen"; 
+      $isian[8]="Tanggal Asesmen"; 
+      $field[9]="kategori_instrumen"; 
+      $isian[9]="kategori"; 
 
       // $field[5]="deskripsi"; 
       // $isian[5]="Deskripsi"; 
-      $arrCriteria = array($id_siswa);
-      $mySql = "SELECT asesmen_siswa.*, instrumen.butir AS butir, instrumen.gambar FROM asesmen_siswa 
-                    INNER JOIN instrumen ON asesmen_siswa.id_instrumen = instrumen.id 
-                    WHERE asesmen_siswa.id_siswa=?";
-        showTableAsesmen($koneksidb,$tableName,$isian,$field,$formName,$jmlField,$mySql,$arrCriteria);
+      $arrCriteria = array($jmlField);
+      $mySql = "SELECT siswa.*, kategori.kategori_instrumen  FROM siswa 
+                    INNER JOIN kategori ON siswa.id_kategori = kategori.id ";
+      showTable($koneksidb,$tableName,$isian,$field,$formName,$jmlField,$mySql,$arrCriteria);
         
     ?> 
     <button type="submit" name="simpan" class="btn btn-primary bg-green" ><i class="fa fa-save"></i> SIMPAN DATA</button>

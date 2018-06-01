@@ -68,6 +68,9 @@ function showTableAsesmen($koneksidb,$tableName,$isian,$field,$formName,$jmlFiel
 		while($i<=$jmlField){
 			if($field[$i]=='gambar')
 				echo("<td><img style=\"width: 100px; display: block;\" src=\"./images/gambar_instrumen/".$kolomData[$field[$i]]."\" alt=\"Gambar tidak ada\"></td>");
+			
+			else if($field[$i]=='butir1')
+				echo("<td><textarea> ".$kolomData[$field[$i]]." </textarea></td>");	
 			else
 				echo("<td> ".$kolomData[$field[$i]]." </td>");
 			$i++;
@@ -76,11 +79,18 @@ function showTableAsesmen($koneksidb,$tableName,$isian,$field,$formName,$jmlFiel
 		?>
 		<td>
 			<label>
-				<input type="checkbox"  id="cb<?php echo $Kode?>" name="cb<?php echo $Kode?>"class="js-switch" /> Mampu
+				<input type="checkbox"  value="<?php echo $Kode?>" name="cbmampu[]" class="js-switch" 
+				<?php
+
+						if($kolomData['hasil']=="MAMPU")
+							echo ' checked';
+					
+				?>
+				/> Mampu
 				<span class="label label-success success<?php echo $Kode; ?>" style="display:none"> Nilai Sudah Disimpan</span>
 			</label>
 		</td>
-		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<!-- <script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" >
 		$(function() {
 			$("#cb<?php echo $Kode?>").change(function () {
@@ -143,7 +153,7 @@ function showTableAsesmen($koneksidb,$tableName,$isian,$field,$formName,$jmlFiel
                             return false;
                         });
                     });
-                    </script>
+                    </script> -->
 		<?php
 		
 		echo("</tr>");	
