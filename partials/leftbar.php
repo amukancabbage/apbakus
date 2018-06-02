@@ -34,8 +34,8 @@
         <li><a><i class="fa fa-user"></i>User Asesor <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
             <li><a href="?page=Anak-Data">Data Anak</a></li>
-            <li><a href="?page=Asesmen-Anak">Asesmen Anak</a></li>
-            <li><a href="?page=Lihat-Siswa">Lihat Data Anak</a></li>
+            <li><a href="?page=Pilih-Anak&Kode=Asesmen">Asesmen Anak</a></li>
+            <li><a href="?page=Pilih-Anak&Kode=Lihat">Lihat Data Anak</a></li>
         </ul>
         </li>
         <li><a href="?page=Logout"><i class="fa fa-sign-out"></i> Log Out </a>

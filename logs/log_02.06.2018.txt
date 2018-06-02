@@ -1,0 +1,117 @@
+[07:27:26am][admin][::1][INSERT SUCCESS][INSERT INTO asesmen (status,id_anak,id_kategori,tanggal_asesmen,usia,id_user) 
+                          VALUES (?,?,?,?,?,?) : (1, 1, 1, 2018-06-02, , 1 )]
+[07:34:34am][admin][::1][INSERT SUCCESS][INSERT INTO asesmen (status,id_anak,id_kategori,tanggal_asesmen,usia,id_user) 
+                          VALUES (?,?,?,?,?,?) : (1, 1, 1, 2018-06-02, 3 Tahun 0 Bulan, 1 )]
+[07:36:17am][admin][::1][INSERT SUCCESS][INSERT INTO asesmen (status,id_anak,id_kategori,tanggal_asesmen,usia,id_user) 
+                          VALUES (?,?,?,?,?,?) : (1, 1, 1, 2018-06-02, 3 Tahun 0 Bulan, 1 )]
+[07:37:19am][admin][::1][INSERT SUCCESS][INSERT INTO asesmen (status,id_anak,id_kategori,tanggal_asesmen,usia,id_user) 
+                          VALUES (?,?,?,?,?,?) : (1, 1, 1, 2018-06-02, 3 Tahun 0 Bulan, 1 )]
+[07:37:43am][admin][::1][INSERT SUCCESS][INSERT INTO asesmen (status,id_anak,id_kategori,tanggal_asesmen,usia,id_user) 
+                          VALUES (?,?,?,?,?,?) : (1, 1, 1, 2018-06-02, 3 Tahun 0 Bulan, 1 )]
+[08:43:33am][admin][::1][INSERT SUCCESS][INSERT INTO anak (status,nama,jenis_kelamin,tanggal_lahir,nama_ortu,alamat,no_kontak,id_user) 
+                    VALUES (?,?,?,?,?,?,?,?) : (1, Anak Enam, Laki-laki, 2016-06-06, Ortu Enam, Alamat Enam, 081106, 1 )]
+[08:43:47am][admin][::1][INSERT SUCCESS][INSERT INTO asesmen (status,id_anak,id_kategori,tanggal_asesmen,usia,id_user) 
+                          VALUES (?,?,?,?,?,?) : (1, 3, 1, 2018-06-02, 1 Tahun 11 Bulan, 1 )]
+[09:24:08am][admin][::1][INSERT SUCCESS][INSERT INTO pengguna (status,nama_user,user_password,nama_lengkap,no_kontak,level,avatar) VALUES (?,?,?,?,?,?,?) : (1, mirna, 62e5be88aa9a187683b13da59bed51e8, Mirna, 0800000000, 1, mirna.jpg )]
+[09:36:56am][mirna][::1][DELETE SUCCESS][DELETE FROM kategori WHERE id=? : (3 )]
+[09:38:15am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat mengenal benda dengan respon 
+a.	Puting susu ibu 
+b.	Botol susu
+, no_image.jpg, - )]
+[09:38:21am][mirna][::1][UPDATE SUCCESS][UPDATE instrumen set butir=?, keterangan=? WHERE id=? : (Dapat mengenal benda dengan respon 
+a.	Puting susu ibu 
+b.	Botol susu
+, -, 33 )]
+[09:38:45am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat meniru kegiatan yang dilakukan keluarga 
+a.	Shalat 
+b.	Berbicara/mengulangi perkataan orangtua
+, no_image.jpg, - )]
+[09:38:55am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Sering  bertanya  tentang  benda yang  dilihatnya, no_image.jpg, - )]
+[09:39:05am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Rasa ingin tahu yang tinggi 
+a.	sering bertanya terhadap benda yang baru dilihat 
+b.	 ingin mencoba sesuatu ha1 yang baru di lihat
+, no_image.jpg, - )]
+[09:39:24am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat mencoret bebas , no_image.jpg, - )]
+[09:39:47am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Suka bercanda dengan keluarga, no_image.jpg, - )]
+[09:40:02am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat mengenal benda miliknya, no_image.jpg, - )]
+[09:40:16am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat mengenal orang terdekat (keluarga), no_image.jpg, -
+ )]
+[09:40:30am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat menunjukkan anggota tubuhnya 
+a.	Tangan 
+b.	Kaki 
+c.	Mata 
+d.	Telinga 
+e.	Hidung 
+f.	Rambut
+g.	Mulut 
+h.	Gigi 
+i.	Lidah
+, no_image.jpg, - )]
+[09:40:43am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat menyebutkan anggota tubuhnya 
+a.	Tangan 
+b.	Kaki 
+c.	Mata 
+d.	Telinga 
+e.	Hidung 
+f.	Rambut 
+g.	Mulut 
+h.	Gigi
+, no_image.jpg, - )]
+[09:40:54am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat menyebutkan nama binatang yang terdapat pada kertas yang bergambar 
+a.	kucing 
+b.	anjing 
+c.	burung 
+d.	ikan 
+e.	ayam 
+f.	sapi 
+g.	kambing
+, no_image.jpg, - )]
+[09:41:03am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat menunjukkan angka 1 - 10 
+a.	secara berurutan 
+b.	secara acak
+, no_image.jpg, - )]
+[09:41:30am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat menyebutkan angka 1-1 0 
+a.	secara berurutan 
+b.	secara acak
+, no_image.jpg, - )]
+[09:41:42am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat menyebutkan nama huruf abjad 
+a.	hurufvokal 
+b.	huruf konsonan
+, no_image.jpg, - )]
+[09:42:12am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, menulis: 
+a.	menebalkan titik-titik
+b.	meniru tulisan 
+c.	menjiplak gambar 
+, no_image.jpg, - )]
+[09:42:23am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Suka berimajinasi
+a.	bermain perang-perangan 
+b.	bermain pesawat-pesawatan 
+c.	bermain boneka 
+d.	bermain mobil-mobilan
+, no_image.jpg, - )]
+[09:42:33am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat menyebutkan 
+a.	Nama sendiri 
+b.	Nama ayah 
+c.	Nama ibu 
+d.	Nama adik 
+e.	Nama kakak
+, no_image.jpg, - )]
+[09:42:43am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat membuat gambar sederhana  yang 
+sudah berbentuk 
+a.	Garnbar rumah 
+b.	Gambar pohon 
+c.	Gambar gunung
+, no_image.jpg, - )]
+[09:42:56am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Dapat menyebutkan  nama  benda disekitarnya 
+a.	Meja
+b.	Kursi 
+c.	Lemari 
+d.	TV 
+e.	Pintu 
+f.	Jendela
+, no_image.jpg, - )]
+[09:43:09am][mirna][::1][INSERT SUCCESS][INSERT INTO instrumen (status,id_pengguna,id_kategori_instrumen, butir, gambar, keterangan) VALUES (?,?,?,?,?,?) : (1, 5, 2, Anak mengerti dengan perintah sederhana 
+a.	Mengambil gelas 
+b.	Mengambil sapu 
+c.	Menyimpan mainannya
+, no_image.jpg, - )]

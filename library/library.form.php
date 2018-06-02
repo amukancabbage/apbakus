@@ -24,6 +24,30 @@ function showTable($koneksidb,$tableName,$isian,$field,$formName,$jmlField,$mySq
 	tableGentellaEND();
 }
 
+function showTablePilih($koneksidb,$isian,$field,$tujuan,$jmlField,$mySql){
+	
+	tableGentellaBEGIN(4,$jmlField+1,$isian);
+	$nomor  = 1; 
+	$kolomDat = getDataAll($koneksidb,$mySql);
+	foreach ($kolomDat as $kolomData) {
+		$Kode = $kolomData[$field[0]];
+		echo("<tr>");
+		echo("<td align=\"center\">".$nomor++."</td>");
+		$i=4;
+		while($i<=$jmlField){
+			echo("<td> ".$kolomData[$field[$i]]." </td>");
+			$i++;
+		}
+		?>
+		</td>	
+			<td class="cc" align="center"><a href="?page=<?php echo $tujuan."&ida=".encD($Kode); ?>" target="_self"><span class="btn btn-primary"> Lanjut <i class="fa fa-arrow-right"></i></span></a></td>
+		</tr>	
+		<?php
+	}
+	
+	tableGentellaEND();
+}
+
 function showTableCriteria($koneksidb,$tableName,$isian,$field,$formName,$jmlField,$mySql,$arrCriteria){
 	$nama1 = str_replace("_","-",$formName);
 	tableGentellaBEGIN(4,$jmlField+1,$isian);
@@ -53,7 +77,25 @@ function showTableCriteria($koneksidb,$tableName,$isian,$field,$formName,$jmlFie
 
 function showTableAsesmen($koneksidb,$tableName,$isian,$field,$formName,$jmlField,$mySql,$arrCriteria){
 	$nama1 = str_replace("_","-",$formName);
-	tableGentellaBEGIN(4,$jmlField+1,$isian);
+	//tableGentellaBEGIN(4,$jmlField+1,$isian);
+
+	?>
+	<div class="x_content">
+		<table id="table-asesmen" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th width="10px">No</th>
+				<?php
+					for($i=4;$i<=$jmlField;$i++){
+						echo('			<th>'.$isian[$i].'</th> ');
+					}
+				?>
+				<th width="80px" >Action</th>
+			</tr>
+		</thead>
+		<tbody>
+	<?php
+
 	//$mySql = "SELECT $tableName.* FROM ".$tableName;
 	$jmlData = getDataNumber2($koneksidb,$mySql,$arrCriteria);
 	$nomor  = 1; 
@@ -79,7 +121,7 @@ function showTableAsesmen($koneksidb,$tableName,$isian,$field,$formName,$jmlFiel
 		?>
 		<td>
 			<label>
-				<input type="checkbox"  value="<?php echo $Kode?>" name="cbmampu[]" class="js-switch" 
+				<input type="checkbox"  value="<?php echo $Kode?>" name="cbmampu[]" class="js-switch";
 				<?php
 
 						if($kolomData['hasil']=="MAMPU")
@@ -195,7 +237,7 @@ function tableGentellaBEGIN($start,$jmlField,$isian){
 		<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
 		<thead>
 			<tr>
-				<th width="10px">No</th>;
+				<th width="10px">No</th>
 				<?php
 					for($i=$start;$i<=$jmlField-1;$i++){
 						echo('			<th>'.$isian[$i].'</th> ');

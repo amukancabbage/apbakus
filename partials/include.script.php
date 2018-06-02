@@ -87,4 +87,10 @@
   $('.modal').on('shown.bs.modal', function() {
     $(this).find('[autofocus]').focus();
   });
+
+  $(document).ready(function (){
+    var table = $('#table-asesmen').DataTable({
+        "paging": false
+    });
+});
 </script>

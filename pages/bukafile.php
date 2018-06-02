@@ -66,90 +66,9 @@ $nopage = "<meta http-equiv='refresh' content='0; url=page_404.html'> ";
                 include 'pages/admin/instrumen_ubah.php';	break;	
     
             
-            case 'Kabupaten-Baru' :				
-                if(!file_exists ('pages/admin/kabkot_baru.php')) die ($nopage); 
-                include 'pages/admin/kabkot_baru.php';	break;	
-            
-            case 'Kabupaten-Data' :				
-                if(!file_exists ('pages/admin/kabkot_data.php')) die ($nopage); 
-                include 'pages/admin/kabkot_data.php';	break;	
-        
-            case 'Kabupaten-Ubah' :				
-                if(!file_exists ('pages/admin/kabkot_ubah.php')) die ($nopage); 
-                include 'pages/admin/kabkot_ubah.php';	break;	
-    
-            case 'Kecamatan-Baru' :				
-                if(!file_exists ('pages/admin/kecamatan_baru.php')) die ($nopage); 
-                include 'pages/admin/kecamatan_baru.php';	break;	
-            
-            case 'Kecamatan-Data' :				
-                if(!file_exists ('pages/admin/kecamatan_data.php')) die ($nopage); 
-                include 'pages/admin/kecamatan_data.php';	break;	
-        
-            case 'Kecamatan-Ubah' :				
-                if(!file_exists ('pages/admin/kecamatan_ubah.php')) die ($nopage); 
-                include 'pages/admin/kecamatan_ubah.php';	break;	
-    
-            case 'Desa-Baru' :				
-                if(!file_exists ('pages/admin/desa_baru.php')) die ($nopage); 
-                include 'pages/admin/desa_baru.php';	break;	
-            
-            case 'Desa-Data' :				
-                if(!file_exists ('pages/admin/desa_data.php')) die ($nopage); 
-                include 'pages/admin/desa_data.php';	break;	
-        
-            case 'Desa-Ubah' :				
-                if(!file_exists ('pages/admin/desa_ubah.php')) die ($nopage); 
-                include 'pages/admin/desa_ubah.php';	break;	
+           
             
             //MASTER USER BIDANG
-            case 'Peternak-Baru' :				
-                if(!file_exists ('pages/userbidang/peternak_baru.php')) die ($nopage); 
-                include 'pages/userbidang/peternak_baru.php';	break;	
-            
-            case 'Peternak-Data' :				
-                if(!file_exists ('pages/userbidang/peternak_data.php')) die ($nopage); 
-                include 'pages/userbidang/peternak_data.php';	break;	
-        
-            case 'Peternak-Ubah' :				
-                if(!file_exists ('pages/userbidang/peternak_ubah.php')) die ($nopage); 
-                include 'pages/userbidang/peternak_ubah.php';	break;	
-            
-            case 'Poktan-Baru' :				
-                if(!file_exists ('pages/userbidang/poktan_baru.php')) die ($nopage); 
-                include 'pages/userbidang/poktan_baru.php';	break;	
-            
-            case 'Poktan-Data' :				
-                if(!file_exists ('pages/userbidang/poktan_data.php')) die ($nopage); 
-                include 'pages/userbidang/poktan_data.php';	break;	
-        
-            case 'Poktan-Ubah' :				
-                if(!file_exists ('pages/userbidang/poktan_ubah.php')) die ($nopage); 
-                include 'pages/userbidang/poktan_ubah.php';	break;	
-    
-            case 'Komoditas-Baru' :				
-                if(!file_exists ('pages/userbidang/komoditas_baru.php')) die ($nopage); 
-                include 'pages/userbidang/komoditas_baru.php';	break;	
-            
-            case 'Komoditas-Data' :				
-                if(!file_exists ('pages/userbidang/komoditas_data.php')) die ($nopage); 
-                include 'pages/userbidang/komoditas_data.php';	break;	
-        
-            case 'Komoditas-Ubah' :				
-                if(!file_exists ('pages/userbidang/komoditas_ubah.php')) die ($nopage); 
-                include 'pages/userbidang/komoditas_ubah.php';	break;	
-    
-            case 'Penyuluh-Baru' :				
-                if(!file_exists ('pages/userbalai/penyuluh_baru.php')) die ($nopage); 
-                include 'pages/userbalai/penyuluh_baru.php';	break;	
-            
-            case 'Penyuluh-Data' :				
-                if(!file_exists ('pages/userbalai/penyuluh_data.php')) die ($nopage); 
-                include 'pages/userbalai/penyuluh_data.php';	break;	
-        
-            case 'Penyuluh-Ubah' :				
-                if(!file_exists ('pages/userbalai/penyuluh_ubah.php')) die ($nopage); 
-                include 'pages/userbalai/penyuluh_ubah.php';	break;	
         
             case 'Anak-Baru' :				
                 if(!file_exists ('pages/asesor/anak_baru.php')) die ($nopage); 
@@ -168,23 +87,6 @@ $nopage = "<meta http-equiv='refresh' content='0; url=page_404.html'> ";
 
             //::PROSES DATA BEGIN
 
-            case 'Tahunkomoditas-Baru' :				
-                if(!file_exists ('pages/userbidang/tahunkomoditas_baru.php')) die ($nopage); 
-                include 'pages/userbidang/tahunkomoditas_baru.php';	break;	
-            
-            case 'Tahunkomoditas-Data' :				
-                if(!file_exists ('pages/userbidang/tahunkomoditas_data.php')) die ($nopage); 
-                include 'pages/userbidang/tahunkomoditas_data.php';	break;	
-        
-            case 'Tahunkomoditas-Ubah' :				
-                if(!file_exists ('pages/userbidang/tahunkomoditas_ubah.php')) die ($nopage); 
-                include 'pages/userbidang/tahunkomoditas_ubah.php';	break;
-
-
-            case 'Upsus-Data' :				
-                if(!file_exists ('pages/userbalai/upsus_data.php')) die ($nopage); 
-                include 'pages/userbalai/upsus_data.php';	break;	
-
             case 'Asesmen-Anak' :				
                 if(!file_exists ('pages/asesor/input_data_anak.php')) die ($nopage); 
                 include 'pages/asesor/input_data_anak.php';	break;	
@@ -202,6 +104,14 @@ $nopage = "<meta http-equiv='refresh' content='0; url=page_404.html'> ";
             case 'Pilih-Kategori' :				
                 if(!file_exists ('pages/admin/pilih_kategori.php')) die ($nopage); 
                 include 'pages/admin/pilih_kategori.php';	break;
+            
+            case 'Pilih-Kategori-Asesmen' :				
+                if(!file_exists ('pages/asesor/pilih_kategori_asesmen.php')) die ($nopage); 
+                include 'pages/asesor/pilih_kategori_asesmen.php';	break;
+            
+            case 'Pilih-Anak' :				
+                if(!file_exists ('pages/asesor/pilih_anak.php')) die ($nopage); 
+                include 'pages/asesor/pilih_anak.php';	break;
 
             //::ETC END
 

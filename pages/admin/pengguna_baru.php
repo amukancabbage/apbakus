@@ -5,7 +5,7 @@
     input("password","Password (Ulangi)",3,"","data-parsley-equalto=\"#txt2\" required"); 
     input("text","Nama Lengkap",4,"","required"); 
     input("text","No Kontak",5,"","data-parsley-type=\"digits\" required"); 
-    $pilihan = array("Admin Dinas","User Bidang","User Balai");
+    $pilihan = array("Admin","Asesor","User");
     $paluy = array("1","2","3");
     select("Level",6,"",$paluy,$pilihan);
     input("file","Foto",7,"","required");
