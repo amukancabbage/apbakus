@@ -6,10 +6,10 @@ if($ippengguna=="::1") {
   $nPass	= '';
   $nDbs	  = 'db_abk';
 }else{
-  $nHost	= 'localhost';
-  $nUser	= 'root';
-  $nPass	= '';
-  $nDbs	  = 'db_abk';
+  $nHost	= 'mysql.hostinger.co.id';
+  $nUser	= 'u713260332_yogy';
+  $nPass	= 'kurniawan86';
+  $nDbs	  = 'u713260332_abk';
 }
 
 try {
