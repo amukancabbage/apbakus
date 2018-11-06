@@ -1,34 +1,3 @@
-<?php 
-  require "library/sesadmin.php"; 
-  if(isset($_POST['insert']))
-	{ 
-    $txt1 = $_POST['txt1'];
-    $txt2 = $_POST['txt2'];
-
-    $pesanError = array();
-
-    $arrCrit = array($txt1);
-    $cekAda = "Select count(*) FROM kategori WHERE kategori_instrumen=?";
-    if(getDataNumber($koneksidb,$cekAda,$arrCrit)>0)
-      $pesanError[]="Kategori sudah ada";
-    
-      if (count($pesanError)>=1 ){  
-        showMessageRed($pesanError);
-        buatLog($_SESSION['UNCLE_username'],"INSERT FAIL",getStringArray($pesanError)); 
-      } 
-      else { 
-        $arrCriteria = array(1,$txt1,$txt2);
-        $insertQuery	= "INSERT INTO kategori (status,kategori_instrumen,deskripsi) VALUES (?,?,?)"; 
-        
-        if(execSql($koneksidb,$insertQuery,$arrCriteria)){ 
-          buatLog($_SESSION['UNCLE_username'],"INSERT SUCCESS",$insertQuery." : ".getStringArray($arrCriteria)); 
-          showMessageGreen("Data berhasil ditambahkan");
-        } 
-        //exit; 
-      } 
-   
-  }
-?>
 <div class="page-title">
     <div class="title_left">
     <h3>Data Kategori Instrumen <small></small></h3>

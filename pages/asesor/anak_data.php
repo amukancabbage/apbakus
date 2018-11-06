@@ -60,8 +60,11 @@
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
    
-    <button type="button" class="btn btn-primary bg-green" data-toggle="modal" data-target=".bs-example-modal-lg"  ><i class="fa fa-plus"></i> TAMBAH DATA</button>
-
+    <button type="button" class="btn btn-primary bg-green" data-toggle="modal" data-target=".bs-example-modal-lg"  ><i class="fa fa-plus"></i> Tambah Data</button>
+    <?php 
+          echo "<a href=\"reports/cetak_pdf.php?report=ABK\" target=\"_blank\" <span class=\"btn btn-primary\">
+                <i class=\"fa fa-print\"></i></span> Cetak Data</a>";
+        ?>
                     <div class="modal fade bs-example-modal-lg"  id = "myModal" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                       <div class="modal-content">

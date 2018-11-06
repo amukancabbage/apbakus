@@ -1,0 +1,2 @@
+[11:09:47am][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,kategori_instrumen,deskripsi) VALUES (?,?,?) : (1, Instrumen Asesmen Mata Pelajaran Matematika, Instrumen Asesmen Mata Pelajaran Matematika )]
+[12:11:29pm][admin][::1][INSERT SUCCESS][INSERT INTO kategori (status,kategori_instrumen,deskripsi) VALUES (?,?,?) : (1, Instrumen Asesmen Membaca, Instrumen Asesmen Membaca )]

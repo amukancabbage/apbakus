@@ -1,0 +1,2 @@
+[08:46:47am][admin1][::1][UPDATE SUCCESS][UPDATE anak set nama=?, jenis_kelamin=?, tanggal_lahir=?, nama_ortu=?, alamat=?, no_kontak=?, id_user=? WHERE id=? : (Anak Lima, Perempuan, 2015-05-06, Ortu Lima, Alamat Lima Alamat Lima Alamat Lima Alamat Lima Alamat Lima Alamat Lima, 081105, 3, 1 )]
+[08:52:14am][admin1][::1][UPDATE SUCCESS][UPDATE anak set nama=?, jenis_kelamin=?, tanggal_lahir=?, nama_ortu=?, alamat=?, no_kontak=?, id_user=? WHERE id=? : (Anak Lima, Perempuan, 2015-05-06, Ortu Lima, Alamat Lima Alamat Lima Alamat Lima , 081105, 3, 1 )]

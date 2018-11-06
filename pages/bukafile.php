@@ -112,6 +112,10 @@ $nopage = "<meta http-equiv='refresh' content='0; url=page_404.html'> ";
             case 'Pilih-Anak' :				
                 if(!file_exists ('pages/asesor/pilih_anak.php')) die ($nopage); 
                 include 'pages/asesor/pilih_anak.php';	break;
+           
+            case 'Pilih-Asesmen' :				
+                if(!file_exists ('pages/asesor/pilih_asesmen.php')) die ($nopage); 
+                include 'pages/asesor/pilih_asesmen.php';	break;
 
             //::ETC END
 

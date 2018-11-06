@@ -1,0 +1,2 @@
+[02:36:30pm][admin][::1][INSERT SUCCESS][INSERT INTO asesmen (status,id_anak,id_kategori,tanggal_asesmen,usia,id_user) 
+                          VALUES (?,?,?,?,?,?) : (1, 1, 1, 2018-06-03, 3 Tahun 0 Bulan, 1 )]

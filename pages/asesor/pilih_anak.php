@@ -108,8 +108,10 @@ if(isset($_POST['insert'])){
       // $arrCriteria = array($jmlField);
       $mySql = "SELECT * from anak";
       // showTable($koneksidb,$tableName,$isian,$field,$formName,$jmlField,$mySql,$arrCriteria);
-      showTablePilih($koneksidb,$isian,$field,"Pilih-Kategori-Asesmen",$jmlField,$mySql)
-        
+      if($Kode=="Asesmen")
+        showTablePilih($koneksidb,$isian,$field,"Pilih-Kategori-Asesmen",$jmlField,$mySql);
+      else if($Kode=="Lihat")
+        showTablePilih($koneksidb,$isian,$field,"Pilih-Asesmen",$jmlField,$mySql);
     ?> 
       <!-- <button type="button" class="btn btn-default" onclick="window.history.go(-1);"><i class="fa fa-arrow-left"></i> Kembali</button>
       <button class="btn btn-primary" type="reset"><i class="fa fa-refresh"></i> Ulang</button>
