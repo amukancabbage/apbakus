@@ -1,5 +1,5 @@
 <div class="navbar nav_title" style="border: 0;">
-    <a href="main.php?page=Home" class="site_title"><i class="fa fa-umbrella"></i> <span>APBAKUS</span></a>    
+    <a href="main.php?page=Home" class="site_title"><i class="fa fa-umbrella"></i> <span>APBAKUS</span></a>
 </div>
 
 <div class="clearfix"></div>
@@ -26,6 +26,7 @@
         <li><a href="?page=Home"><i class="fa fa-home"></i> Home </a>
         <li><a><i class="fa fa-edit"></i> Data Master <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
+            <li><a href="?page=Tipe-Data">Tipe Instrumen</a></li>
             <li><a href="?page=Pengguna-Data">Pengguna</a></li>
             <li><a href="?page=Kategori-Data">Kategori</a></li>
             <li><a href="?page=Pilih-Kategori&Kode=View-Instrumen">Instrumen</a></li>

@@ -11,19 +11,15 @@ include_once '../objects/kategori.php';
 $database = new Database();
 $db = $database->getConnection();
 $kategori = new Kategori($db);
-
 $data = json_decode(file_get_contents("php://input"));
 $kategori->id = $data->id;
-$kategori->status = $data->status;
-$kategori->kategori_instrumen = $data->kategori_instrumen;
-$kategori->deskripsi = $data->deskripsi;
-$kategori->id_tipe = $data->id_tipe;
 
-if($kategori->update()){
-  http_response_code(200);
-  // echo json_encode(array("message" => "Kategori Sudah Diubah."));
+if($kategori->delete()){
+
+    http_response_code(200);
+    echo json_encode(array("message" => "Kategori sudah dihapus."));
 }else{
-  http_response_code(503);
-  // echo json_encode(array("message" => "Kategori GAGAL Diubah."));
+    http_response_code(503);
+    echo json_encode(array("message" => "Kategori GAGAL dihapus."));
 }
 ?>

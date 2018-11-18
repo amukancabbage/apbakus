@@ -1,5 +1,5 @@
-<?php 
-require "library/sesadmin.php"; 
+<?php
+require "library/sesadmin.php";
 if($_GET){
     $Kode=$_GET['Kode'];
     $Kode=decD($Kode);
@@ -22,32 +22,51 @@ if(isset($_POST['edit'])){
     $cekAda = "Select count(*) FROM $tableName WHERE kategori_instrumen=? and id!=?";
     if(getDataNumber($koneksidb,$cekAda,$arrCrit)>0)
       $pesanError[]="kategori sudah ada";
-    
-      if (count($pesanError)>=1 ){  
-        showMessageRed($pesanError);
-        buatLog($_SESSION['UNCLE_username'],"UPDATE FAIL",getStringArray($pesanError)); 
-      } 
-      else { 
-        $arrCriteria =array($txt1,$txt2,$txt0);
-        $editQuery	= "UPDATE kategori set kategori_instrumen=?, deskripsi=? WHERE id=?"; 
-        
-        if(execSql($koneksidb,$editQuery,$arrCriteria)){ 
-          buatLog($_SESSION['UNCLE_username'],"UPDATE SUCCESS",$editQuery." : ".getStringArray($arrCriteria)); 
-          echo "<meta http-equiv='refresh' content='0; url=?page=".$namaForm."-Data'>";  
-        } 
-        exit; 
-      } 
+
+      if (count($pesanError)>=1 ){
+        showMessageRed2($pesanError);
+        buatLog($_SESSION['UNCLE_username'],"UPDATE FAIL",getStringArray($pesanError));
+      }
+      else {
+        // $arrCriteria =array($txt1,$txt2,$txt0);
+        // $editQuery	= "UPDATE kategori set kategori_instrumen=?, deskripsi=? WHERE id=?";
+        //
+        // if(execSql($koneksidb,$editQuery,$arrCriteria)){
+        //   buatLog($_SESSION['UNCLE_username'],"UPDATE SUCCESS",$editQuery." : ".getStringArray($arrCriteria));
+        //   echo "<meta http-equiv='refresh' content='0; url=?page=".$namaForm."-Data'>";
+        // }
+        // exit;
+
+        $url = 'http://localhost/apbakus/api/kategori/update.php';
+        $ch = curl_init($url);
+
+        $jsonData = array(
+            'id' => $Kode,
+            'status' => '1',
+            'kategori_instrumen' => $txt1,
+            'deskripsi' => $txt2
+        );
+
+        $jsonDataEncoded = json_encode($jsonData);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+        $result = curl_exec($ch);
+        if($result){
+          buatLog($_SESSION['UNCLE_username'],"UPDATE kategori SUCCESS",$Kode);
+          echo "<meta http-equiv='refresh' content='0; url=?page=".$namaForm."-Data'>";
+        }
+      }
 }
 
 
 ?>
 
 <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data" method="POST" >
-  <?php 
-    inputHidden("id",0,$Kode,"disabled"); 
-    input("text","Kategori Instrumen",1,$data[4],"autofocus required"); 
-    inputTextArea("text","Deskripsi",2,$data[5],"required data-parsley-trigger=\"keyup\" data-parsley-minlength=\"20\" data-parsley-maxlength=\"200\" 
-    data-parsley-minlength-message=\"Minimal 20 karakter\" data-parsley-validation-threshold=\"10\""); 
+  <?php
+    inputHidden("id",0,$Kode,"disabled");
+    input("text","Kategori Instrumen",1,$data[4],"autofocus required");
+    inputTextArea("text","Deskripsi",2,$data[5],"required data-parsley-trigger=\"keyup\" data-parsley-minlength=\"20\" data-parsley-maxlength=\"200\"
+    data-parsley-minlength-message=\"Minimal 20 karakter\" data-parsley-validation-threshold=\"10\"");
   ?>
   <div class="ln_solid"></div>
   <div class="form-group">

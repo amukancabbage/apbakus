@@ -1,0 +1,4 @@
+[10:49:45am][admin][::1][INSERT SUCCESS][INSERT INTO asesmen (status,id_anak,id_kategori,tanggal_asesmen,usia,id_user) 
+                          VALUES (?,?,?,?,?,?) : (1, 1, 1, 2018-11-14, 3 Tahun 6 Bulan, 1 )]
+[10:52:33am][admin][::1][INSERT SUCCESS][INSERT INTO asesmen (status,id_anak,id_kategori,tanggal_asesmen,usia,id_user) 
+                          VALUES (?,?,?,?,?,?) : (1, 1, 1, 2018-11-14, 3 Tahun 6 Bulan, 1 )]

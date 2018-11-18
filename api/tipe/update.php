@@ -6,24 +6,23 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 include_once '../config/database.php';
-include_once '../objects/kategori.php';
+include_once '../objects/tipe.php';
 
 $database = new Database();
 $db = $database->getConnection();
-$kategori = new Kategori($db);
+$tipe = new Tipe($db);
 
 $data = json_decode(file_get_contents("php://input"));
-$kategori->id = $data->id;
-$kategori->status = $data->status;
-$kategori->kategori_instrumen = $data->kategori_instrumen;
-$kategori->deskripsi = $data->deskripsi;
-$kategori->id_tipe = $data->id_tipe;
+$tipe->id = $data->id;
+$tipe->status = $data->status;
+$tipe->tipe = $data->tipe;
+$tipe->deskripsi = $data->deskripsi;
 
-if($kategori->update()){
+if($tipe->update()){
   http_response_code(200);
-  // echo json_encode(array("message" => "Kategori Sudah Diubah."));
+  // echo json_encode(array("message" => "Tipe Sudah Diubah."));
 }else{
   http_response_code(503);
-  // echo json_encode(array("message" => "Kategori GAGAL Diubah."));
+  // echo json_encode(array("message" => "Tipe GAGAL Diubah."));
 }
 ?>

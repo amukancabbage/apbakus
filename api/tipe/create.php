@@ -6,37 +6,35 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 include_once '../config/database.php';
-include_once '../objects/kategori.php';
+include_once '../objects/tipe.php';
 
 $database = new Database();
 $db = $database->getConnection();
 
-$kategori = new Kategori($db);
+$tipe = new Tipe($db);
 $data = json_decode(file_get_contents("php://input"));
 
 if(
     !empty($data->status) &&
-    !empty($data->kategori_instrumen) &&
-    !empty($data->deskripsi) &&
-    !empty($data->id_tipe)
+    !empty($data->tipe) &&
+    !empty($data->deskripsi)
 ){
 
-    $kategori->status = $data->status;
-    $kategori->kategori_instrumen = $data->kategori_instrumen;
-    $kategori->deskripsi = $data->deskripsi;
-    $kategori->id_tipe = $data->id_tipe;
+    $tipe->status = $data->status;
+    $tipe->tipe = $data->tipe;
+    $tipe->deskripsi = $data->deskripsi;
 
-    if($kategori->create()){
+    if($tipe->create()){
         http_response_code(201);
-        echo json_encode(array("message" => "Kategori berhasil disimpan."));
+        echo json_encode(array("message" => "Tipe berhasil disimpan."));
     }
     else{
         http_response_code(503);
-        echo json_encode(array("message" => "Kategori gagal disimpan"));
+        echo json_encode(array("message" => "Tipe gagal disimpan"));
     }
 }else{
 
     http_response_code(400);
-    echo json_encode(array("message" => "Lengkapi Data Kategori"));
+    echo json_encode(array("message" => "Lengkapi Data Tipe"));
 }
 ?>
