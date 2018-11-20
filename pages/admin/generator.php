@@ -5,30 +5,30 @@
 			$pesanSuccess = array();
 			$namaForm = $_POST['txtNamaTable'];
 			$namaTable = $_POST['selTable'];
-			$folderOutput = "pages/generated";	
+			$folderOutput = "pages/generated";
 			if (!file_exists($folderOutput) )
-			    mkdir($folderOutput);				
+			    mkdir($folderOutput);
 
 			$pageSql="SELECT $namaTable.* FROM ".$namaTable;
-			$jmlField = getColumnNumber($koneksidb,$pageSql)-1;  
+			$jmlField = getColumnNumber($koneksidb,$pageSql)-1;
 
 			if (trim($_POST['selTable'])=="") {
-				$pesanError[] = "Data <b>Nama Form</b> tidak boleh kosong !";		
+				$pesanError[] = "Data <b>Nama Form</b> tidak boleh kosong !";
 			}
-			if (count($pesanError)>=1 ){        
+			if (count($pesanError)>=1 ){
                 $noPesan=0;
-                foreach ($pesanError as $indeks=>$pesan_tampil) { 
-                    $noPesan++; 
-                    echo '<div class="alert alert-warning">'.$noPesan.'. '.$pesan_tampil.'</div><br>';	
-				} 		
+                foreach ($pesanError as $indeks=>$pesan_tampil) {
+                    $noPesan++;
+                    echo '<div class="alert alert-warning">'.$noPesan.'. '.$pesan_tampil.'</div><br>';
+				}
 			}else{
-				$pesanSuccess[]="File ".$namaForm." Berhasil Dibuat !! "; 
+				$pesanSuccess[]="File ".$namaForm." Berhasil Dibuat !! ";
 				$noPesan=0;
-				foreach ($pesanSuccess as $indeks=>$pesan_tampil) { 
-					$noPesan++; 
-					echo '<div class="alert alert-success">'.$pesan_tampil.'</div><br>';	
-				} 
-				echo "</div> <br>"; 
+				foreach ($pesanSuccess as $indeks=>$pesan_tampil) {
+					$noPesan++;
+					echo '<div class="alert alert-success">'.$pesan_tampil.'</div><br>';
+				}
+				echo "</div> <br>";
 
 				buatConfig($folderOutput, $namaForm, $koneksidb, $namaTable,$jmlField);
 				//buatDelete($folderOutput, $namaForm, $namaTable);
@@ -38,7 +38,7 @@
 				//buatMenu($namaForm);
 			}
 		}
-	}	
+	}
 ?>
 
 <div class="page-title">
@@ -109,7 +109,9 @@
                         </div>
                       </div>
 
-                    
+                      <?php input("file","Foto",2,"","");?>
+
+
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

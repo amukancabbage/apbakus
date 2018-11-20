@@ -10,6 +10,7 @@
       include_once "library/library.php";
       include_once "library/library.pdo.php";
       include_once "library/library.generator.php";
+      include_once "library/library.generatorv2.php";
       include_once "library/library.gentella.php";
 
       $default_image_profile = "images/avatars/user_m.png";

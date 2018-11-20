@@ -1,0 +1,11 @@
+{
+  "nama_tabel":"instrumen2",
+  "kolom":[
+    {
+      "nama_kolom":"butir",
+      "tipe_kolom":"varchar(200)"},
+    {
+     "nama_kolom":"gambar",
+     "tipe_kolom":"varchar(200)"}
+  ]
+}

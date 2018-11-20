@@ -5,9 +5,9 @@ function buatConfig($folderOutput, $namaForm, $koneksidb, $namaTable,$jmlField){
 	if(file_exists ($folderOutput."/".$namaFile."_config.php"))
 	unlink($folderOutput."/".$namaFile."_config.php");
 	$myfile = fopen($folderOutput."/".$namaFile."_config.php", "w") or die("Unable to open file!");
-	$pageSql="SELECT $namaTable.* FROM ".$namaTable; 
-	$field = getColumn($koneksidb,$pageSql); 
-	$isian = getColumnSpace($koneksidb,$pageSql); 
+	$pageSql="SELECT $namaTable.* FROM ".$namaTable;
+	$field = getColumn($koneksidb,$pageSql);
+	$isian = getColumnSpace($koneksidb,$pageSql);
 
 	fwrite($myfile, "<?php \n");
 	fwrite($myfile, "\$tableName = \"".$namaTable."\"; \n");
@@ -47,7 +47,7 @@ function buatDelete($folderOutput, $namaForm, $namaTable){
 	fwrite($myfile, "		echo \"<meta http-equiv='refresh' content='0; url=?\".hash_pass('page').\"=\".\$nama1.\"-Data'>\";  \n");
 	fwrite($myfile, "		} \n");
 	fwrite($myfile, "	} \n");
-	fwrite($myfile, "} \n");		
+	fwrite($myfile, "} \n");
 	fwrite($myfile, "?>");
 	fclose($myfile);
 }
@@ -71,16 +71,16 @@ function buatEdit($folderOutput, $namaForm, $namaTable,$jmlField){
 	fwrite($myfile, "} // Penutup GET\n");
 	fwrite($myfile, "?>\n");
 
-	
-	fwrite($myfile, "<?php tampilEditA(\$formName);  \n");	
-	fwrite($myfile, " buatHiddenText(\$data[0],0);  \n");	
+
+	fwrite($myfile, "<?php tampilEditA(\$formName);  \n");
+	fwrite($myfile, " buatHiddenText(\$data[0],0);  \n");
 for($i=1;$i<=$jmlField;$i++){
 	if(($i!=1) && ($i!=2) && ($i!=3)){
 	fwrite($myfile, "		buatInputText(\$isian[$i],$i,\$data[$i]); \n");
 	}
 }
 	fwrite($myfile, "	tampilEditB(); \n");
-	fwrite($myfile, "		?> \n");	
+	fwrite($myfile, "		?> \n");
 }
 
 // MEMBUAT FILE _data.php
@@ -92,9 +92,9 @@ function buatData($folderOutput, $namaForm, $namaTable,$jmlField){
 	buatBtnSave($myfile,$namaFile,$jmlField,"INSERT");
 	fwrite($myfile, "	} \n");
 	fwrite($myfile, " \n");
-	
+
 for($i=1;$i<=$jmlField;$i++){
-	fwrite($myfile, "	\$data[".$i."]	= isset(\$_POST['txt".$i."']) ? \$_POST['txt".$i."'] : ''; \n");		
+	fwrite($myfile, "	\$data[".$i."]	= isset(\$_POST['txt".$i."']) ? \$_POST['txt".$i."'] : ''; \n");
 }
 	fwrite($myfile, "} \n");
 	fwrite($myfile, "\$pageSql = \"SELECT \$tableName.* FROM \".\$tableName; \n");
@@ -102,10 +102,10 @@ for($i=1;$i<=$jmlField;$i++){
 	fwrite($myfile, " \n");
 	fwrite($myfile, "?> \n");
 	fwrite($myfile, " \n");
-		
+
 	fwrite($myfile, "<?php tampilInputA(\$formName);  \n");
 for($i=4;$i<=$jmlField;$i++){
-	fwrite($myfile, "	buatInputText(\$isian[".$i."],".$i.",\$data[".$i."]); \n"); 
+	fwrite($myfile, "	buatInputText(\$isian[".$i."],".$i.",\$data[".$i."]); \n");
 }
 	fwrite($myfile, " tampilInputB(); \n");
 	fwrite($myfile, "/* \n");
@@ -119,7 +119,7 @@ for($i=0;$i<=$jmlField-5;$i++){
 	fwrite($myfile, "\$isi[$i]=\$field[$i]; \n");
 }
 	fwrite($myfile, "tampilTabelCustom(\$koneksidb,\$customQuery,\$head,\$isi,\$formName);\n");
-	
+
 	fwrite($myfile, "*/ \n");
 	fwrite($myfile, "tampilTabel(\$koneksidb,\$tableName,\$isian,\$field,\$formName,\$jmlField); \n?>");
 }
@@ -132,7 +132,7 @@ function buatBtnSave($myfile,$namaFile,$jmlField,$mode){
 	fwrite($myfile, "if(\$_GET) { \n");
 	fwrite($myfile, "	if(isset(\$_POST['btnSave'])){ \n");
 	fwrite($myfile, " \n");
-	
+
 if($mode=="INSERT"){
 	fwrite($myfile, "		\$txt[1] = date(\"Y-m-d h:i:sa\"); \n");
 	fwrite($myfile, "		\$txt[2] = NULL; \n");
@@ -143,15 +143,15 @@ if($mode=="INSERT"){
 	fwrite($myfile, "		\$txt[3] = 0; \n");
 }
 for($i=4;$i<=$jmlField;$i++){
-	fwrite($myfile, "		\$txt[".$i."] = \$_POST['txt".$i."']; \n");		
+	fwrite($myfile, "		\$txt[".$i."] = \$_POST['txt".$i."']; \n");
 }
 	fwrite($myfile, " \n");
 	fwrite($myfile, "		\$pesanError = array(); \n");
 	fwrite($myfile, "		for(\$i=4;\$i<=\$jmlField;\$i++){ \n");
 	fwrite($myfile, "			if (trim(\$txt[\$i])==\"\") { \n");
-	fwrite($myfile, "				\$pesanError[] = \"Data <b>\".\$isian[\$i].\"</b> tidak boleh kosong !\"; \n"); 		
+	fwrite($myfile, "				\$pesanError[] = \"Data <b>\".\$isian[\$i].\"</b> tidak boleh kosong !\"; \n");
 	fwrite($myfile, "			} \n");
-	fwrite($myfile, "		} \n");	
+	fwrite($myfile, "		} \n");
 	fwrite($myfile, " \n");
 if($mode=="INSERT"){
 	fwrite($myfile, "		\$ada = cekAda(\$koneksidb,\$tableName,\$field[4],\$isian[4],\$txt[4]); \n");
@@ -172,7 +172,7 @@ if($mode=="INSERT"){
 	fwrite($myfile, "				echo '\n ");
 	fwrite($myfile, "				<div class=\"alert alert-warning alert-dismissible\" role=\"alert\"> \n");
 	fwrite($myfile, "				<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> \n");
-	fwrite($myfile, "				<h4 class=\"alert-heading\">Error!</h4>'.\$noPesan.'. '.\$pesan_tampil.'</div><br>';	 \n"); 
+	fwrite($myfile, "				<h4 class=\"alert-heading\">Error!</h4>'.\$noPesan.'. '.\$pesan_tampil.'</div><br>';	 \n");
 fwrite($myfile, "			}  \n");
 	fwrite($myfile, "			echo \" <br>\";  \n");
 if($mode=="INSERT"){
@@ -191,7 +191,7 @@ if($mode=="INSERT"){
 	fwrite($myfile, "			\$myQry	= mysqli_query(\$koneksidb, \$mySql) or die (\"Gagal query update :\".\$mySql); \n");
 	fwrite($myfile, "			if(\$myQry){ \n");
 	fwrite($myfile, "			buatLog(\$_SESSION['BONCLINK_M4SUK'],\"UPDATE SUCCESS\",\$mySql); \n");
-}	
+}
 
 	fwrite($myfile, "		\$nama1 = str_replace(\"_\",\"-\",\$formName); \n");
 	fwrite($myfile, "		echo \"<meta http-equiv='refresh' content='0; url=?\".hash_pass('page').\"=\".\$nama1.\"-Data'>\";  \n");
@@ -200,7 +200,7 @@ if($mode=="INSERT"){
 	fwrite($myfile, "			exit; \n");
 	fwrite($myfile, "		} \n");
 	fwrite($myfile, " \n");
-	
+
 }
 
 ?>

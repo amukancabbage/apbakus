@@ -6,7 +6,7 @@ header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 
 include_once '../config/database.php';
-include_once '../objects/kategori.php';
+include_once '../0objects/kategori.php';
 
 $database = new Database();
 $db = $database->getConnection();

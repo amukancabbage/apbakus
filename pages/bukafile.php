@@ -15,6 +15,10 @@ if($_GET) {
     include 'pages/info.php';	break;
 
     case 'Generator' :
+    if(!file_exists ('pages/admin/generatorv2.php')) die ($nopage);
+    include 'pages/admin/generatorv2.php';	break;
+    
+    case 'GeneratorV1' :
     if(!file_exists ('pages/admin/generator.php')) die ($nopage);
     include 'pages/admin/generator.php';	break;
 
