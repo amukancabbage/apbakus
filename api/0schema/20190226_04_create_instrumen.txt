@@ -1,0 +1,17 @@
+{
+  "nama_tabel":"instrumen",
+  "kolom":[
+    {
+      "nama_kolom":"butir",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"gambar",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"keterangan",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"id_kategori",
+      "tipe_kolom":"int"}
+  ]
+}

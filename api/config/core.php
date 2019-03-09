@@ -2,7 +2,12 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-$home_url="http://localhost/apbakus/api/";
+$ippengguna=$_SERVER['REMOTE_ADDR'];
+        if($ippengguna=="::1")
+		$home_url="http://localhost/apbakus/api/";
+	else
+		$home_url="http://mirzayogy.com/apbakus/api/";
+
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $records_per_page = 5;

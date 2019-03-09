@@ -1,23 +1,20 @@
 <?php
-function showMessageRed($isiPesan){
+  function showMessageRed($isiPesan){
   if(count($isiPesan)>1){
     ?><script>
     function notif(){
       <?php
-      $noPesan=0;
-
-      foreach ($isiPesan as $indeks=>$pesan_tampil) {
-        $noPesan++; ?>
-
-        new PNotify({
+      $i=0;
+      while($i<count($isiPesan)){
+        echo "{new PNotify({
           title: 'KESALAHAN',
-          text: '<?php $pesan_tampil ?>',
+          text: '$isiPesan[$i]',
           type: 'error',
           styling: 'bootstrap3'
-        });
-        <?php } ?>
-      }
-      </script>";
+        });}";
+        $i++;
+      }?>
+      }</script>
       <?php
     }else{
       echo "<script>

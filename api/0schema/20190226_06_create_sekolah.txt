@@ -1,0 +1,14 @@
+{
+  "nama_tabel":"sekolah",
+  "kolom":[
+    {
+      "nama_kolom":"nama_sekolah",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"alamat",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"kontak",
+      "tipe_kolom":"varchar(200)"}
+  ]
+}

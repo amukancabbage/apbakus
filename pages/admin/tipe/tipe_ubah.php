@@ -1,10 +1,10 @@
 <?php
 require "library/sesadmin.php";
-if($_GET){
-  $Kode=$_GET['Kode'];
-  $Kode=decD($Kode);
-  $tableName = "tipe";
-  $namaForm = ucwords(str_replace("t_","",$tableName));
+  if($_GET){
+    $Kode=$_GET['Kode'];
+    $Kode=decD($Kode);
+    $tableName = "tipe";
+    $namaForm = ucwords(str_replace("t_","",$tableName));
 
 if(isset($_POST['edit'])){
     $txt0 = $Kode;

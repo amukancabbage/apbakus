@@ -1,0 +1,35 @@
+{
+  "nama_tabel":"anak",
+  "kolom":[
+    {
+      "nama_kolom":"nama",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"jenis_kelamin",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"tanggal_lahir",
+      "tipe_kolom":"date"},
+    {
+      "nama_kolom":"nama_ortu",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"alamat",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"no_kontak",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"id_sekolah",
+      "tipe_kolom":"int"},
+    {
+      "nama_kolom":"id_pengguna",
+      "tipe_kolom":"int"},
+    {
+      "nama_kolom":"username",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"password",
+      "tipe_kolom":"varchar(200)"}
+  ]
+}

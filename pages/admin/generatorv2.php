@@ -5,7 +5,7 @@ if($_GET) {
 
 if(isset($_POST['btnSave'])){
   $txt1 = $_FILES['txt1']['name'];
-  $locnamefile = "generate/database/".$txt1;
+  $locnamefile = "api/0schema/".$txt1;
   $myfile = fopen($locnamefile, "r") or die("Unable to open file!");
   $txt2 = fread($myfile,filesize($locnamefile));
   $decoded = json_decode($txt2);

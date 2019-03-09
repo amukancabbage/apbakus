@@ -1,0 +1,29 @@
+{
+  "nama_tabel":"pengguna",
+  "kolom":[
+    {
+      "nama_kolom":"nama_user",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"user_password",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"nama_lengkap",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"no_kontak",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"level",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"avatar",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"com_code",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"forgot",
+      "tipe_kolom":"varchar(200)"}
+  ]
+}

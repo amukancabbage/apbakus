@@ -1,37 +1,37 @@
-<?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: access");
-header("Access-Control-Allow-Methods: GET");
-header("Access-Control-Allow-Credentials: true");
-header('Content-Type: application/json');
+ <?php 
 
-include_once '../config/database.php';
-include_once '../0objects/kategori.php';
+  header("Access-Control-Allow-Origin: *");
+  header("Access-Control-Allow-Headers: access");
+  header("Access-Control-Allow-Methods: GET");
+  header("Access-Control-Allow-Credentials: true");
+  header('Content-Type: application/json');
 
-$database = new Database();
-$db = $database->getConnection();
+  include_once '../config/database.php';
+  include_once '../0objects/kategori.php';
 
-$kategori = new Kategori($db);
+  $database = new Database();
+  $db = $database->getConnection();
 
-$kategori->id = isset($_GET['id']) ? $_GET['id'] : die();
-$kategori->readOne();
+  $kategori = new Kategori($db);
 
-if($kategori->kategori_instrumen!=null){
+  $kategori->id = isset($_GET['id']) ? $_GET['id'] : die();
+  $kategori->readOne();
 
-    $kategori_arr = array(
-        "id" => $kategori->id,
-        "kategori_instrumen" => $kategori->kategori_instrumen,
-        "deskripsi" => $kategori->deskripsi,
-        "id_tipe" => $kategori->id_tipe,
-        "nama_tipe" => $kategori->nama_tipe
-    );
+  if($kategori->kategori_instrumen!=null){
 
-    http_response_code(200);
-    echo json_encode($kategori_arr);
-}
+      $kategori_arr = array(
+          "id" => $kategori->id,
+"kategori_instrumen" => $kategori->kategori_instrumen,
+"deskripsi" => $kategori->deskripsi,
+"id_tipe" => $kategori->id_tipe
+      );
 
-else{
-    http_response_code(404);
-    echo json_encode(array("message" => "Kategori tidak ditemukan"));
-}
-?>
+      http_response_code(200);
+      echo json_encode($kategori_arr);
+  }
+
+  else{
+      http_response_code(404);
+      echo json_encode(array("message" => "Kategori tidak ditemukan"));
+  }
+ ?>

@@ -1,4 +1,5 @@
 <?php
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: access");
 header("Access-Control-Allow-Methods: GET");
@@ -18,18 +19,18 @@ $tipe->readOne();
 
 if($tipe->tipe!=null){
 
-    $tipe_arr = array(
-        "id" => $tipe->id,
-        "tipe" => $tipe->tipe,
-        "deskripsi" => $tipe->deskripsi
-    );
+  $tipe_arr = array(
+    "id" => $tipe->id,
+    "tipe" => $tipe->tipe,
+    "deskripsi" => $tipe->deskripsi
+  );
 
-    http_response_code(200);
-    echo json_encode($tipe_arr);
+  http_response_code(200);
+  echo json_encode($tipe_arr);
 }
 
 else{
-    http_response_code(404);
-    echo json_encode(array("message" => "Tipe tidak ditemukan"));
+  http_response_code(404);
+  echo json_encode(array("message" => "Tipe tidak ditemukan"));
 }
 ?>

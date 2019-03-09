@@ -1,0 +1,26 @@
+{
+  "nama_tabel":"asesmen",
+  "kolom":[
+    {
+      "nama_kolom":"id_tipe",
+      "tipe_kolom":"int"},
+    {
+      "nama_kolom":"id_anak",
+      "tipe_kolom":"int"},
+    {
+      "nama_kolom":"id_guru",
+      "tipe_kolom":"int"},
+    {
+      "nama_kolom":"tanggal_asesmen",
+      "tipe_kolom":"date"},
+    {
+      "nama_kolom":"usia",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"hasil_akhir",
+      "tipe_kolom":"double"},
+    {
+      "nama_kolom":"catatan_akhir ",
+      "tipe_kolom":"varchar(200)"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "nama_tabel":"guru",
+  "kolom":[
+    {
+      "nama_kolom":"id_pengguna",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"alamat",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"kontak",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"id_sekolah",
+      "tipe_kolom":"int"}
+  ]
+}

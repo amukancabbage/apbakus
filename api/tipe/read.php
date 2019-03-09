@@ -14,31 +14,31 @@ $stmt = $tipe->read();
 $num = $stmt->rowCount();
 
 if($num>0){
+  $tipes_arr=array();
+  $tipes_arr["records"]=array();
 
-    $tipes_arr=array();
-    $tipes_arr["records"]=array();
+  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    extract($row);
+    $tipe_item=array(
+      "id" => $id,
+      "created_at" => $created_at,
+      "updated_at" => $updated_at,
+      "status" => $status,
+      "tipe" => $tipe,
+      "deskripsi" => $deskripsi);
 
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        extract($row);
-
-        $tipe_item=array(
-            "id" => $id,
-            "tipe" => $tipe,
-            "deskripsi" => html_entity_decode($deskripsi)
-        );
-
-        array_push($tipes_arr["records"], $tipe_item);
+      array_push($tipes_arr["records"], $tipe_item);
     }
 
     http_response_code(200);
     echo json_encode($tipes_arr);
-}
+  }
 
-else{
+  else{
 
     http_response_code(404);
     echo json_encode(
-        array("message" => "data tipe masih kosong.")
+      array("message" => "data masih kosong.")
     );
-}
-?>
+  }
+  ?>

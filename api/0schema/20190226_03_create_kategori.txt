@@ -1,0 +1,14 @@
+{
+  "nama_tabel":"kategori",
+  "kolom":[
+    {
+      "nama_kolom":"kategori_instrumen",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"deskripsi",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"id_tipe",
+      "tipe_kolom":"int"}
+  ]
+}

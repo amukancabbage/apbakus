@@ -1,0 +1,11 @@
+{
+  "nama_tabel":"tipe",
+  "kolom":[
+    {
+      "nama_kolom":"tipe",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"deskripsi",
+      "tipe_kolom":"varchar(200)"}
+  ]
+}

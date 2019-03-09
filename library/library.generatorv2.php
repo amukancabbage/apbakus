@@ -103,23 +103,23 @@ function buat_file_create($nama_tabel, $nama_koloms){
   \$data = json_decode(file_get_contents(\"php://input\"));
 
   if(
-      !empty(\$data->status) ".ambil_var_cek_kosong($jumlah_kolom,$nama_koloms)."
+    !empty(\$data->status) ".ambil_var_cek_kosong($jumlah_kolom,$nama_koloms)."
   ){
 
-      \$".$nama_tabel."->status = \$data->status; ".ambil_var_json($nama_tabel,$jumlah_kolom,$nama_koloms)."
+    \$".$nama_tabel."->status = \$data->status; ".ambil_var_json($nama_tabel,$jumlah_kolom,$nama_koloms)."
 
-      if(\$".$nama_tabel."->create()){
-          http_response_code(201);
-          echo json_encode(array(\"message\" => \"".ucwords($nama_tabel)." berhasil disimpan.\"));
-      }
-      else{
-          http_response_code(503);
-          echo json_encode(array(\"message\" => \"".ucwords($nama_tabel)." gagal disimpan\"));
-      }
+    if(\$".$nama_tabel."->create()){
+      http_response_code(201);
+      echo json_encode(array(\"message\" => \"".ucwords($nama_tabel)." berhasil disimpan.\"));
+    }
+    else{
+      http_response_code(503);
+      echo json_encode(array(\"message\" => \"".ucwords($nama_tabel)." gagal disimpan\"));
+    }
   }else{
 
-      http_response_code(400);
-      echo json_encode(array(\"message\" => \"Lengkapi Data ".ucwords($nama_tabel)."\"));
+    http_response_code(400);
+    echo json_encode(array(\"message\" => \"Lengkapi Data ".ucwords($nama_tabel)."\"));
   } ?>");
   fclose($myfile);
 }
@@ -130,8 +130,30 @@ function buat_file_update($nama_tabel, $nama_koloms){
   if(file_exists ("api/".$nama_tabel."/update.php"))
   unlink("api/".$nama_tabel."/update.php");
   $myfile = fopen("api/".$nama_tabel."/update.php", "w") or die("Unable to open file!");
-  fwrite($myfile, " <?php \n\n");
-  fwrite($myfile, " ?>");
+  fwrite($myfile, " <?php header(\"Access-Control-Allow-Origin: *\");
+  header(\"Content-Type: application/json; charset=UTF-8\");
+  header(\"Access-Control-Allow-Methods: POST\");
+  header(\"Access-Control-Max-Age: 3600\");
+  header(\"Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With\");
+
+  include_once '../config/database.php';
+  include_once '../0objects/".$nama_tabel.".php';
+
+  \$database = new Database();
+  \$db = \$database->getConnection();
+  \$".$nama_tabel." = new ".ucwords($nama_tabel)."(\$db);
+
+  \$data = json_decode(file_get_contents(\"php://input\"));
+  \$".$nama_tabel."->id = \$data->id;
+  \$".$nama_tabel."->status = \$data->status;".ambil_var_json($nama_tabel,$jumlah_kolom,$nama_koloms)."
+
+  if(\$".$nama_tabel."->update()){
+    http_response_code(200);
+    // echo json_encode(array(\"message\" => \"".ucwords($nama_tabel)." Sudah Diubah.\"));
+  }else{
+    http_response_code(503);
+    // echo json_encode(array(\"message\" => \"".ucwords($nama_tabel)." GAGAL Diubah.\"));
+  }\n?>");
   fclose($myfile);
 }
 
@@ -141,8 +163,29 @@ function buat_file_delete($nama_tabel, $nama_koloms){
   if(file_exists ("api/".$nama_tabel."/delete.php"))
   unlink("api/".$nama_tabel."/delete.php");
   $myfile = fopen("api/".$nama_tabel."/delete.php", "w") or die("Unable to open file!");
-  fwrite($myfile, " <?php \n\n");
-  fwrite($myfile, " ?>");
+  fwrite($myfile, " <?php \nheader(\"Access-Control-Allow-Origin: *\");
+  header(\"Content-Type: application/json; charset=UTF-8\");
+  header(\"Access-Control-Allow-Methods: POST\");
+  header(\"Access-Control-Max-Age: 3600\");
+  header(\"Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With\");
+
+  include_once '../config/database.php';
+  include_once '../0objects/".$nama_tabel.".php';
+
+  \$database = new Database();
+  \$db = \$database->getConnection();
+  \$".$nama_tabel." = new ".ucwords($nama_tabel)."(\$db);
+  \$data = json_decode(file_get_contents(\"php://input\"));
+  \$".$nama_tabel."->id = \$data->id;
+
+  if(\$".$nama_tabel."->delete()){
+
+    http_response_code(200);
+    echo json_encode(array(\"message\" => \"".ucwords($nama_tabel)." sudah dihapus.\"));
+  }else{
+    http_response_code(503);
+    echo json_encode(array(\"message\" => \"".ucwords($nama_tabel)." GAGAL dihapus.\"));
+  } ?>");
   fclose($myfile);
 }
 
@@ -152,8 +195,39 @@ function buat_file_read_one($nama_tabel, $nama_koloms){
   if(file_exists ("api/".$nama_tabel."/read_one.php"))
   unlink("api/".$nama_tabel."/read_one.php");
   $myfile = fopen("api/".$nama_tabel."/read_one.php", "w") or die("Unable to open file!");
-  fwrite($myfile, " <?php \n\n");
-  fwrite($myfile, " ?>");
+  fwrite($myfile, " <?php \n
+  header(\"Access-Control-Allow-Origin: *\");
+  header(\"Access-Control-Allow-Headers: access\");
+  header(\"Access-Control-Allow-Methods: GET\");
+  header(\"Access-Control-Allow-Credentials: true\");
+  header('Content-Type: application/json');
+
+  include_once '../config/database.php';
+  include_once '../0objects/".$nama_tabel.".php';
+
+  \$database = new Database();
+  \$db = \$database->getConnection();
+
+  \$".$nama_tabel." = new ".ucwords($nama_tabel)."(\$db);
+
+  \$".$nama_tabel."->id = isset(\$_GET['id']) ? \$_GET['id'] : die();
+  \$".$nama_tabel."->readOne();
+
+  if(\$".$nama_tabel."->".$nama_koloms[4]."!=null){
+
+      \$".$nama_tabel."_arr = array(
+          \"id\" => \$".$nama_tabel."->id".ambil_var_read_one($nama_tabel,$jumlah_kolom,$nama_koloms)."
+      );
+
+      http_response_code(200);
+      echo json_encode(\$".$nama_tabel."_arr);
+  }
+
+  else{
+      http_response_code(404);
+      echo json_encode(array(\"message\" => \"".ucwords($nama_tabel)." tidak ditemukan\"));
+  }
+ ?>");
   fclose($myfile);
 }
 
@@ -236,7 +310,7 @@ function buat_model($nama_tabel,$nama_koloms){
 
   function ambil_isi_teks_fungsi_search(){
     return "function search(\$keywords){
-      \$query = \$basic_query.\"  WHERE  butir LIKE ?  ORDER BY  butir\";
+      \$query = \$this->basic_query.\"  WHERE  butir LIKE ?  ORDER BY  butir\";
       \$stmt = \$this->conn->prepare(\$query);
 
       \$keywords=htmlspecialchars(strip_tags(\$keywords));
@@ -318,7 +392,7 @@ function buat_model($nama_tabel,$nama_koloms){
   function ambil_isi_teks_fungsi_read_one($jumlah_kolom,$nama_koloms){
     $var_this_row = ambil_var_this_row($jumlah_kolom,$nama_koloms);
     return "function readOne(){
-      \$query = \$this->basic_query.\"  WHERE  i.id = ?  LIMIT 0,1\";
+      \$query = \$this->basic_query.\"  WHERE id = ?  LIMIT 0,1\";
       \$stmt = \$this->conn->prepare( \$query );
       \$stmt->bindParam(1, \$this->id);
       \$stmt->execute();
@@ -330,6 +404,16 @@ function buat_model($nama_tabel,$nama_koloms){
     } \n\n";
   }
 
+
+  function ambil_var_read_one($nama_tabel,$jumlah_kolom,$nama_koloms){
+    $var_atribut = "";
+    $i = 4;
+    while ($i<$jumlah_kolom) {
+      $var_atribut = $var_atribut.",\n\"".$nama_koloms[$i]."\" => \$".$nama_tabel."->".$nama_koloms[$i];
+      $i++;
+    }
+    return $var_atribut;
+  }
 
   function ambil_var_atribut($jumlah_kolom,$nama_koloms){
     $var_atribut = "";
