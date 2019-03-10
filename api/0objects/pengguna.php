@@ -133,6 +133,49 @@ class Pengguna extends Model_Basic {
     return false;
   }
 
+  function forgot_check(){
+    $query = "SELECT * FROM " . $this->nama_tabel . " WHERE nama_user = ?";
+    $stmt = $this->conn->prepare($query);
+    $this->nama_user=htmlspecialchars(strip_tags($this->nama_user));
+    $stmt->bindParam(1, $this->nama_user);
+    $stmt->execute();
+    return $stmt;
+  }
+
+  function forgot_check_code(){
+    $query = "SELECT * FROM " . $this->nama_tabel . " WHERE nama_user = ? AND forgot = ?";
+    $stmt = $this->conn->prepare($query);
+    $this->nama_user=htmlspecialchars(strip_tags($this->nama_user));
+    $this->forgot=htmlspecialchars(strip_tags($this->forgot));
+    $stmt->bindParam(1, $this->nama_user);
+    $stmt->bindParam(2, $this->forgot);
+    $stmt->execute();
+    return $stmt;
+  }
+
+  function reset_pass(){
+    $new_forgot=md5(uniqid(rand()));
+
+    $query = "UPDATE " . $this->nama_tabel . " SET forgot=? , user_password=? WHERE forgot=? AND nama_user=?";
+    $stmt = $this->conn->prepare($query);
+
+    $new_forgot=htmlspecialchars(strip_tags($new_forgot));
+    $this->user_password=htmlspecialchars(strip_tags($this->user_password));
+    $this->forgot=htmlspecialchars(strip_tags($this->forgot));
+    $this->nama_user=htmlspecialchars(strip_tags($this->nama_user));
+
+    $stmt->bindParam(1, $new_forgot);
+    $stmt->bindParam(2, $this->user_password);
+    $stmt->bindParam(3, $this->forgot);
+    $stmt->bindParam(4, $this->nama_user);
+
+    if($stmt->execute()){
+      return true;
+    }
+
+    return false;
+  }
+
   function update(){
     $query = "UPDATE " . $this->nama_tabel . "
     SET

@@ -29,7 +29,7 @@ if(
   $num = $stmt->rowCount();
   if($num>0){
     if($pengguna->confirm()){
-      http_response_code(201);
+      // http_response_code(201);
       $minfo = array("success"=>'true', "message"=>'Your account activated');
       $jsondata = json_encode($minfo);
       echo $jsondata;
