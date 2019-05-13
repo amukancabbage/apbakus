@@ -54,10 +54,6 @@ if(!empty($pengguna->nama_user) && !empty($pengguna->user_password)){
     $minfo = array("success"=>'false', "message"=>'Account does not exist. Please signup');
     $jsondata = json_encode($minfo);
   }
-
-
-
-
 }else
 {
   echo 'empty fileds';
