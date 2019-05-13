@@ -10,10 +10,13 @@ $db = $database->getConnection();
 
 $anak = new Anak($db);
 $anak->id_pengguna = isset($_GET['id_pengguna']) ? $_GET['id_pengguna'] : die();
-$stmt = $anak->read();
+$keywords=isset($_GET["s"]) ? $_GET["s"] : "";
+
+$stmt = $anak->search($keywords);
 $num = $stmt->rowCount();
 
 if($num>0){
+
   $anaks_arr=array();
   $anaks_arr["records"]=array();
 
@@ -36,17 +39,16 @@ if($num>0){
       "password" => $password);
 
       array_push($anaks_arr["records"], $anak_item);
-    }
-
-    http_response_code(200);
-    echo json_encode($anaks_arr);
   }
 
-  else{
+  http_response_code(200);
+  echo json_encode($anaks_arr);
+}
 
-    http_response_code(404);
-    echo json_encode(
-      array("message" => "data masih kosong.")
-    );
-  }
-  ?>
+else{
+  http_response_code(404);
+  echo json_encode(
+    array("message" => "No anak found.")
+  );
+}
+?>

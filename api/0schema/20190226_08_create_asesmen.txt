@@ -8,7 +8,7 @@
       "nama_kolom":"id_anak",
       "tipe_kolom":"int"},
     {
-      "nama_kolom":"id_guru",
+      "nama_kolom":"id_user",
       "tipe_kolom":"int"},
     {
       "nama_kolom":"tanggal_asesmen",

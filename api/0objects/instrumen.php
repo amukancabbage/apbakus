@@ -1,5 +1,5 @@
 <?php
-include("../../0model/model_basic.php");
+include_once("../../0model/model_basic.php");
 class Instrumen extends Model_Basic {
   public  $nama_tabel="instrumen";
   public $butir;
@@ -124,6 +124,16 @@ class Instrumen extends Model_Basic {
     $this->id_kategori = $row['id_kategori'];
 
   }
+
+  function readByTipe($id_tipe){
+    $query = "select instrumen.*,kategori.id_tipe FROM instrumen LEFT JOIN kategori ON
+                instrumen.id_kategori_instrumen=kategori.id WHERE kategori.id_tipe=?";
+    $stmt = $this->conn->prepare( $query );
+    $id_tipe=htmlspecialchars(strip_tags($id_tipe));
+    $stmt->bindParam(1, $id_tipe);
+    $stmt->execute();
+    return $stmt;
+}
 
 
 }

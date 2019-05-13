@@ -18,8 +18,10 @@ class Anak extends Model_Basic {
   }
 
   function read(){
-    $query = "SELECT * FROM " . $this->nama_tabel . " ORDER BY id ASC";
+    $query = "SELECT * FROM " . $this->nama_tabel . " where id_pengguna=? ORDER BY id ASC ";
     $stmt = $this->conn->prepare($query);
+    $this->id_pengguna=htmlspecialchars(strip_tags($this->id_pengguna));
+    $stmt->bindParam(1, $this->id_pengguna);
     $stmt->execute();
     return $stmt;
   }
@@ -36,13 +38,15 @@ class Anak extends Model_Basic {
 
   }
   function search($keywords){
-    $query = $this->basic_query."  WHERE  butir LIKE ?  ORDER BY  butir";
+    $query = $this->basic_query."  WHERE  nama LIKE ?  and id_pengguna = ? ORDER BY  nama";
     $stmt = $this->conn->prepare($query);
 
+    $this->id_pengguna=htmlspecialchars(strip_tags($this->id_pengguna));
     $keywords=htmlspecialchars(strip_tags($keywords));
     $keywords = "%{$keywords}%";
 
     $stmt->bindParam(1, $keywords);
+    $stmt->bindParam(2, $this->id_pengguna);
     $stmt->execute();
 
     return $stmt;

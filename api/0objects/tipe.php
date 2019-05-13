@@ -1,5 +1,5 @@
 <?php
-include("../../0model/model_basic.php");
+include_once("../../0model/model_basic.php");
 class Tipe extends Model_Basic {
   public  $nama_tabel="tipe";
   public $tipe;

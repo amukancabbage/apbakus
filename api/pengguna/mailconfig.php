@@ -9,7 +9,7 @@ $mail->Host = "smtp.hostinger.co.id";///your smtp host smtp.hostinger.co.id smtp
 $mail->Port =587; // or 587 465
 $mail->IsHTML(true);
 $mail->Username = "admin@mirzayogy.com";////your username
-$mail->Password = "kurniawan86";//your password
+$mail->Password = "mautauajah86.";//your password
 $mail->isHTML(true);
 $mail->SetFrom("admin@mirzayogy.com","APBAKUS");
 

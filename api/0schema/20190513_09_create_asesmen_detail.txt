@@ -1,0 +1,17 @@
+{
+  "nama_tabel":"asesmen_detail",
+  "kolom":[
+    {
+      "nama_kolom":"id_asesmen",
+      "tipe_kolom":"int"},
+    {
+      "nama_kolom":"id_instrumen",
+      "tipe_kolom":"int"},
+    {
+      "nama_kolom":"hasil",
+      "tipe_kolom":"varchar(200)"},
+    {
+      "nama_kolom":"catatan",
+      "tipe_kolom":"varchar(200)"}
+  ]
+}

@@ -142,6 +142,15 @@ class Pengguna extends Model_Basic {
     return $stmt;
   }
 
+  function login_check(){
+    $query = "SELECT * FROM " . $this->nama_tabel . " WHERE nama_user = ?";
+    $stmt = $this->conn->prepare($query);
+    $this->nama_user=htmlspecialchars(strip_tags($this->nama_user));
+    $stmt->bindParam(1, $this->nama_user);
+    $stmt->execute();
+    return $stmt;
+  }
+
   function forgot_check_code(){
     $query = "SELECT * FROM " . $this->nama_tabel . " WHERE nama_user = ? AND forgot = ?";
     $stmt = $this->conn->prepare($query);

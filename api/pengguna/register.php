@@ -20,7 +20,7 @@ $name=$_POST['name'];
 // $name=$data->name;
 $com_code = md5(uniqid(rand()));
 $forgot = md5(uniqid(rand()));
-$password=$_POST['password'];
+$password=md5($_POST['password']);
 $logintype=$_POST['logintype'];
 // $password=$data->password;
 // $logintype=$data->logintype;
@@ -46,11 +46,12 @@ if(
   $num = $stmt->rowCount();
   if(!$num>0){
     if($pengguna->create()){
-      http_response_code(201);
+      // http_response_code(201);
       //echo json_encode(array("message" => "Pengguna berhasil disimpan."));
 
-      $lastid = $pengguna->lastInsertedId();
-      $minfo = array("success"=>'true', "message"=>'Account confimation email sent successfully to your email address',"userid"=>$lastid);
+      // $lastid = $pengguna->lastInsertedId();
+      // $minfo = array("success"=>'true', "message"=>'Account confimation email sent successfully to your email address',"userid"=>$lastid,"nama_lengkap"=>'unverified');
+      $minfo = array("success"=>'true', "message"=>'Account confimation email sent successfully to your email address');
       $jsondata = json_encode($minfo);
       echo $jsondata;
 
@@ -59,7 +60,11 @@ if(
       $link='mirzayogy.com/apbakus/api/pengguna/confirm.php?passkey=' . $com_code .'&email='.$user_email;
       $message = file_get_contents('emailhead.php');
       $message .= '
-      <a href="'.$link.'" class="btn-primary" style="line-height: 22px; margin: 0; box-sizing: border-box; font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px; padding: 20px; display: block; font-weight: bold; background: #ee8027; border-radius: 3px; text-decoration: none; text-align: center;">Konfirmasi alamat surel anda</a>
+      <a href="'.$link.'" class="btn-primary" style="line-height: 22px; margin: 0;
+      box-sizing: border-box; font-family: Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif;
+      color: #ffffff; font-size: 18px; padding: 20px; display: block; font-weight: bold;
+      background: #ee8027; border-radius: 3px; text-decoration: none; text-align: center;"
+      >Konfirmasi alamat surel anda</a>
       </td>
       </tr>';
       $message .= file_get_contents('emailfoot.php');
@@ -68,7 +73,7 @@ if(
       $mail->AddAddress($user_email);
 
       if(!$mail->Send()) {
-        echo "Mailer Error: " . $mail->ErrorInfo;
+        // echo "Mailer Error: " . $mail->ErrorInfo;
       } else {
         //echo "Message has been sent"
         //echo "Your Confirmation link Has Been Sent To Your Email Address.";
