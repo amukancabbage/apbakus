@@ -22,12 +22,14 @@ if($num>0){
 
   while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     extract($row);
-    $asesmen_item=array(
-      "id" => $id,
+    $asesmen_item=array(  
+      "id" => $id_azezmen,
+      "id_azezmen" => $id_azezmen,
       "id_user" => $id_user,
       "id_anak" => $id_anak,
       "nama" => $nama,
       "tipe" => $tipe,
+      "id_tipe" => $id_tipe,
       "hasil_akhir" => $hasil_akhir,
       "catatan_akhir" => $catatan_akhir,
       "tanggal_lahir" => $tanggal_lahir,

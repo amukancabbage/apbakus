@@ -57,7 +57,7 @@ require "library/sesadmin.php";
     table_BEGIN($title,4,$jmlField+1,$isian);
     //$mySql = "SELECT $tableName.* FROM ".$tableName;
     $nomor  = 1;
-    foreach ($data->records as $idx => $records) {
+    foreach ($data as $idx => $records) {
       $Kode = $records->id;
       echo("<tr>");
       echo("<td align=\"center\">".$nomor++."</td>");

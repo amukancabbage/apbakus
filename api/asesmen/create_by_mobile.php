@@ -57,7 +57,7 @@ if(
           $db->query("INSERT INTO asesmen_detail SET status=1, id_asesmen=$id_asesmen, id_instrumen=$id, hasil='TIDAK'");
         }
         $db->commit();
-        
+
       }catch(Exception $e){
         $db->rollback();
       }
@@ -70,7 +70,7 @@ if(
     //   );
     // }
 
-    $minfo = array("success"=>'false', "message"=>'Asesmen sukses insert'.$asesmen->id_tipe.$asesmen->id_anak.$asesmen->id_user.$tanggal_lahir);
+    $minfo = array("success"=>'true', "message"=>'Asesmen sukses insert',"id_asesmen"=>$id_asesmen);
     $jsondata = json_encode($minfo);
     echo $jsondata;
 

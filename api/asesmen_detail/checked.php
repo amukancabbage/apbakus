@@ -6,20 +6,23 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 include_once '../config/database.php';
-include_once '../0objects/anak.php';
+include_once '../0objects/asesmen_detail.php';
 
 $database = new Database();
 $db = $database->getConnection();
-$anak = new Anak($db);
-$anak->id = $_POST['id'];
+$asesmen_detail = new Asesmen_detail($db);
 
-if($anak->delete()){
-  http_response_code(200);
-  $minfo = array("success"=>'true', "message"=>'Deleted.');
+$asesmen_detail->id=$_POST['id'];
+$asesmen_detail->hasil=$_POST['hasil'];
+
+if($asesmen_detail->checked()){
+  $minfo = array("success"=>'true', "message"=>'Updated.');
   $jsondata = json_encode($minfo);
   echo $jsondata;
-}else{
+}
+else{
   $minfo = array("success"=>'false', "message"=>'Failed.');
   $jsondata = json_encode($minfo);
   echo $jsondata;
-} ?>
+}
+?>

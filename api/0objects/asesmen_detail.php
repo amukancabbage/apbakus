@@ -1,5 +1,5 @@
 <?php
-include("../../0model/model_basic.php");
+include_once("../../0model/model_basic.php");
 class Asesmen_detail extends Model_Basic {
   public  $nama_tabel="asesmen_detail";
   public $id_asesmen;
@@ -124,6 +124,67 @@ class Asesmen_detail extends Model_Basic {
     $this->catatan = $row['catatan'];
 
   }
+
+  function readByAsesmen(){
+    $query = "SELECT asesmen_detail.*, instrumen.butir FROM asesmen_detail INNER JOIN instrumen ON asesmen_detail.id_instrumen = instrumen.id WHERE id_asesmen=?";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bindParam(1, $this->id_asesmen);
+    $stmt->execute();
+    return $stmt;
+  }
+
+  function readByAsesmenKategori($id_kategori){
+    $query = "SELECT instrumen.id_kategori_instrumen,kategori.kategori_instrumen, asesmen_detail.id_instrumen, instrumen.butir, asesmen_detail.id_asesmen,
+              asesmen_detail.id, asesmen_detail.hasil
+              from asesmen_detail
+              LEFT JOIN instrumen ON asesmen_detail.id_instrumen = instrumen.id
+              LEFT JOIN kategori ON instrumen.id_kategori_instrumen = kategori.id
+              WHERE asesmen_detail.id_asesmen=? AND id_kategori_instrumen = ?";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bindParam(1, $this->id_asesmen);
+    $stmt->bindParam(2, $id_kategori);
+    $stmt->execute();
+    return $stmt;
+  }
+
+  function checked(){
+    $query = "UPDATE " . $this->nama_tabel . "
+    SET hasil=:hasil
+    WHERE
+    id = :id";
+    $stmt = $this->conn->prepare($query);
+
+    $this->hasil=htmlspecialchars(strip_tags($this->hasil));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    $stmt->bindParam(":hasil", $this->hasil);
+    $stmt->bindParam(':id', $this->id);
+
+    if($stmt->execute()){
+      return true;
+    }
+
+    return false;
+  }
+
+function readSummary(){
+  $query = "select kategori.kategori_instrumen,
+              count(if(asesmen_detail.hasil='MAMPU',asesmen_detail.hasil,NULL)) AS jumlah_mampu,
+              count(if(asesmen_detail.hasil='TIDAK',asesmen_detail.hasil,NULL)) AS jumlah_tidak,
+              count(*) AS jumlah,
+              concat(count(if(asesmen_detail.hasil='MAMPU',asesmen_detail.hasil,NULL)),'/',count(*)) AS per,
+              round((count(if(asesmen_detail.hasil='MAMPU',asesmen_detail.hasil,NULL))/count(*))*100,2) AS persen
+
+              FROM asesmen_detail
+              LEFT JOIN instrumen ON asesmen_detail.id_instrumen = instrumen.id
+              LEFT JOIN kategori ON instrumen.id_kategori_instrumen = kategori.id
+              WHERE asesmen_detail.id_asesmen = ?
+              GROUP BY kategori_instrumen";
+  $stmt = $this->conn->prepare($query);
+  $stmt->bindParam(1, $this->id_asesmen);
+  $stmt->execute();
+  return $stmt;
+}
 
 
 }

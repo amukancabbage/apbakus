@@ -1,5 +1,5 @@
 <?php
-include("../../0model/model_basic.php");
+include_once("../../0model/model_basic.php");
 class Kategori extends Model_Basic {
   public  $nama_tabel="kategori";
   public $kategori_instrumen;
@@ -117,6 +117,14 @@ class Kategori extends Model_Basic {
     $this->deskripsi = $row['deskripsi'];
     $this->id_tipe = $row['id_tipe'];
 
+  }
+
+  function readByTipe(){
+    $query = "SELECT * FROM " . $this->nama_tabel . " WHERE id_tipe = ? ORDER BY id ASC";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bindParam(1, $this->id_tipe);
+    $stmt->execute();
+    return $stmt;
   }
 
 

@@ -156,10 +156,10 @@ class Asesmen extends Model_Basic {
     return $stmt;
   }
   function readByUser(){
-    $query = "SELECT asesmen.id, asesmen.id_anak, asesmen.id_user, anak.nama, tipe.tipe, asesmen.usia,asesmen.hasil_akhir,asesmen.catatan_akhir,
+    $query = "SELECT asesmen.id as id_azezmen, asesmen.id_anak, asesmen.id_user, anak.nama, asesmen.id_tipe, tipe.tipe, asesmen.usia,asesmen.hasil_akhir,asesmen.catatan_akhir,
                   anak.tanggal_lahir, asesmen.tanggal_asesmen
               FROM asesmen INNER JOIN anak ON asesmen.id_anak = anak.id
-              INNER JOIN tipe ON asesmen.id_tipe = tipe.id WHERE asesmen.id_user=? ORDER BY anak.nama";
+              INNER JOIN tipe ON asesmen.id_tipe = tipe.id WHERE asesmen.id_user=? ORDER BY asesmen.tanggal_asesmen DESC";
     $stmt = $this->conn->prepare($query);
 
     $this->id_user = htmlspecialchars(strip_tags($this->id_user));
@@ -168,6 +168,36 @@ class Asesmen extends Model_Basic {
     $stmt->execute();
 
     return $stmt;
+  }
+
+  function readNote(){
+    $query = "SELECT asesmen.id, asesmen.catatan_akhir
+              FROM asesmen WHERE asesmen.id=?";
+    $stmt = $this->conn->prepare($query);
+
+    $this->id = htmlspecialchars(strip_tags($this->id));
+
+    $stmt->bindParam(1, $this->id);
+    $stmt->execute();
+
+    return $stmt;
+  }
+
+  function updateNote(){
+    $query = "UPDATE asesmen SET catatan_akhir=? WHERE id=?";
+    $stmt = $this->conn->prepare($query);
+
+    // $this->catatan_akhir = htmlspecialchars(strip_tags($this->catatan_akhir));
+    // $this->id = htmlspecialchars(strip_tags($this->id));
+    //
+    $stmt->bindParam(1, $this->catatan_akhir );
+    $stmt->bindParam(2, $this->id);
+
+    if($stmt->execute()){
+      return true;
+    }
+
+    return false;
   }
 
   function createByMobile($tanggal_lahir){
@@ -195,13 +225,7 @@ class Asesmen extends Model_Basic {
     $stmt->bindParam(3, $this->id_user);
     $stmt->bindParam(4, $this->tanggal_asesmen);
     $stmt->bindParam(5, $this->usia);
-    // $stmt->bindParam(2, 5);
-    // $stmt->bindParam(3, 2);
-    // $stmt->bindParam(":id_user", 1);
-    // $stmt->bindParam(":tanggal_asesmen", "2019-09-09");
-    // $stmt->bindParam(":usia", "sat");
-    // $stmt->bindParam(":hasil_akhir", "tu");
-    // $stmt->bindParam(":catatan_akhir ", "du" );
+
 
     if($stmt->execute()){
       return true;

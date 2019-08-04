@@ -1,4 +1,4 @@
- <?php 
+ <?php
 header("Access-Control-Allow-Origin: *");
   header("Content-Type: application/json; charset=UTF-8");
   header("Access-Control-Allow-Methods: POST");
@@ -11,14 +11,15 @@ header("Access-Control-Allow-Origin: *");
   $database = new Database();
   $db = $database->getConnection();
   $asesmen = new Asesmen($db);
-  $data = json_decode(file_get_contents("php://input"));
-  $asesmen->id = $data->id;
+  $asesmen->id = $_POST['id'];
 
   if($asesmen->delete()){
-
     http_response_code(200);
-    echo json_encode(array("message" => "Asesmen sudah dihapus."));
+    $minfo = array("success"=>'true', "message"=>'Deleted.');
+    $jsondata = json_encode($minfo);
+    echo $jsondata;
   }else{
-    http_response_code(503);
-    echo json_encode(array("message" => "Asesmen GAGAL dihapus."));
+    $minfo = array("success"=>'false', "message"=>'Failed.');
+    $jsondata = json_encode($minfo);
+    echo $jsondata;
   } ?>

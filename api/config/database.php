@@ -15,10 +15,10 @@ class Database{
     $this->password = '';
     $this->db_name    = 'db_abk';
     // }else{
-    //   $this->host     ='mysql.hostinger.co.id';
-    //   $this->username = 'u713260332_yogy';
-    //   $this->password = 'kurniawan86';
-    //   $this->db_name    = 'u713260332_abk';
+      // $this->host     ='mysql.hostinger.co.id';
+      // $this->username = 'u713260332_yogy';
+      // $this->password = 'kurniawan86';
+      // $this->db_name    = 'u713260332_abk';
     // }
   }
 
