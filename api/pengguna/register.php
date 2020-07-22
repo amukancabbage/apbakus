@@ -51,9 +51,7 @@ if(
 
       // $lastid = $pengguna->lastInsertedId();
       // $minfo = array("success"=>'true', "message"=>'Account confimation email sent successfully to your email address',"userid"=>$lastid,"nama_lengkap"=>'unverified');
-      $minfo = array("success"=>'true', "message"=>'Account confimation email sent successfully to your email address');
-      $jsondata = json_encode($minfo);
-      echo $jsondata;
+
 
 
       require '../../PHPMailer_5.2.0/class.phpmailer.php';
@@ -69,14 +67,20 @@ if(
       </tr>';
       $message .= file_get_contents('emailfoot.php');
       include 'mailconfig.php';
-      $mail->Subject = "Email konfirmasi akun untuk APKBAKUS";//"Confirmation Email For Ecommerce Store App Demo";
+      $mail->Subject = "Email konfirmasi akun untuk APBAKUS";//"Confirmation Email For Ecommerce Store App Demo";
       $mail->AddAddress($user_email);
 
       if(!$mail->Send()) {
         // echo "Mailer Error: " . $mail->ErrorInfo;
+        $minfo = array("success"=>'true', "message"=>'Account confimation email sent successfully to your email address');
+        $jsondata = json_encode($minfo);
+        echo $jsondata;
       } else {
         //echo "Message has been sent"
         //echo "Your Confirmation link Has Been Sent To Your Email Address.";
+        $minfo = array("success"=>'true', "message"=>'Akun sedang diproses, silahkan tunggu beberapa saat lagi');
+        $jsondata = json_encode($minfo);
+        echo $jsondata;
       }
 
 
@@ -101,4 +105,5 @@ if(
   http_response_code(400);
   $minfo = array("success"=>'false', "message"=>'Empty field found');
   $jsondata = json_encode($minfo);
+  echo $jsondata;
 } ?>

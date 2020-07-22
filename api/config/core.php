@@ -6,7 +6,7 @@ $ippengguna=$_SERVER['REMOTE_ADDR'];
         if($ippengguna=="::1")
 		$home_url="http://localhost/apbakus/api/";
 	else
-		$home_url="http://mirzayogy.com/apbakus/api/";
+		$home_url="http://apbakus.id/api/";
 
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;

@@ -11,12 +11,10 @@ $db = $database->getConnection();
 
 
 $kategori = new Kategori($db);
-$kategori->id_tipe = isset($_POST['id_tipe']) ? $_POST['id_tipe'] : die();
-// $kategori->id_tipe = "1";
+$kategori->id_tipe = isset($_GET['id_tipe']) ? $_GET['id_tipe'] : die();
 
 $asesmen_detail = new Asesmen_detail($db);
-$asesmen_detail->id_asesmen = isset($_POST['id_asesmen']) ? $_POST['id_asesmen'] : die();
-// $asesmen_detail->id_asesmen = "2";
+$asesmen_detail->id_asesmen = isset($_GET['id_asesmen']) ? $_GET['id_asesmen'] : die();
 
 $stmt = $kategori->readByTipe();
 $num = $stmt->rowCount();
@@ -59,7 +57,7 @@ if($num>0){
     }
 
     http_response_code(200);
-    // var_dump($kategoris_arr);
+    var_dump($kategoris_arr);
     echo json_encode($kategoris_arr);
   }
 

@@ -12,8 +12,9 @@ $database = new Database();
 $db = $database->getConnection();
 
 $pengguna = new Pengguna($db);
-$pengguna->nama_user = $_POST['email'];
-$pengguna->user_password = md5($_POST['password']);
+
+$pengguna->nama_user = $_POST['email'] ?? '';
+$pengguna->user_password = md5($_POST['password'] ?? '');
 
 if(!empty($pengguna->nama_user) && !empty($pengguna->user_password)){
 
